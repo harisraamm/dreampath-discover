@@ -1,0 +1,1918 @@
+```html
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    Kodaikanal Stay | Dreampath Discover
+  </title>
+  
+  <link
+    rel="icon"
+    type="image/png"
+    href="images/kodaikanal complete/WhatsApp Image 2026-08-08 at 1.10.08 PM.jpeg"
+  >
+
+  <meta
+    name="description"
+    content="Explore unique Kodaikanal stays with Dreampath Discover."
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+
+  <style>
+
+    /* ==========================================
+       KODAIKANAL PAGE
+       ========================================== */
+
+    .kodaikannal-page {
+      padding-bottom: 90px;
+    }
+
+
+    .kodaikannal-hero {
+      max-width: 850px;
+      margin-bottom: 55px;
+    }
+
+
+    .kodaikannal-hero h1 {
+      margin-bottom: 20px;
+    }
+
+
+    .kodaikannal-hero .lead {
+      max-width: 720px;
+    }
+
+
+    /* ==========================================
+       STAY GRID
+       ========================================== */
+
+    .kodaikannal-stays {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+
+    /* ==========================================
+       STAY CARD
+       ========================================== */
+
+    .kodaikannal-stay {
+      background: #f3efe6;
+      overflow: hidden;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    /* ==========================================
+       IMAGE SLIDER
+       ========================================== */
+
+    .stay-slider {
+      width: 100%;
+      height: 340px;
+      position: relative;
+      overflow: hidden;
+      background: #ddd;
+    }
+
+
+    .stay-slide {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+
+    .stay-slide.active {
+      display: block;
+    }
+
+
+    /* ==========================================
+       SLIDER BUTTONS
+       ========================================== */
+
+    .slider-prev,
+    .slider-next {
+
+      position: absolute;
+
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      width: 44px;
+      height: 44px;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background: rgba(0, 0, 0, 0.55);
+
+      color: #fff;
+
+      font-size: 30px;
+
+      line-height: 1;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      cursor: pointer;
+
+      z-index: 5;
+
+      transition:
+        background .2s,
+        transform .2s;
+
+    }
+
+
+    .slider-prev {
+      left: 15px;
+    }
+
+
+    .slider-next {
+      right: 15px;
+    }
+
+
+    .slider-prev:hover,
+    .slider-next:hover {
+
+      background: rgba(0, 0, 0, 0.8);
+
+      transform:
+        translateY(-50%)
+        scale(1.05);
+
+    }
+
+
+    /* ==========================================
+       SLIDER DOTS
+       ========================================== */
+
+    .slider-dots {
+
+      position: absolute;
+
+      left: 50%;
+
+      bottom: 15px;
+
+      transform: translateX(-50%);
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      z-index: 6;
+
+    }
+
+
+    .slider-dot {
+
+      width: 9px;
+      height: 9px;
+
+      padding: 0;
+
+      border: 1px solid #fff;
+
+      border-radius: 50%;
+
+      background: rgba(255, 255, 255, 0.45);
+
+      cursor: pointer;
+
+      transition:
+        background .2s,
+        transform .2s;
+
+    }
+
+
+    .slider-dot.active {
+
+      background: #fff;
+
+      transform: scale(1.25);
+
+    }
+
+
+    .slider-dot:hover {
+
+      background: #fff;
+
+    }
+
+
+    /* ==========================================
+       STAY CONTENT
+       ========================================== */
+
+    .kodaikannal-stay-content {
+
+      padding: 30px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      height: 100%;
+
+    }
+
+
+    .kodaikannal-stay-content h2 {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 32px;
+
+      line-height: 1.15;
+
+      margin: 8px 0 14px;
+
+    }
+
+
+    .kodaikannal-price {
+
+      font-size: 20px;
+
+      font-weight: 700;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .kodaikannal-description {
+
+      line-height: 1.7;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    /* ==========================================
+       DETAILS
+       ========================================== */
+
+    .stay-highlights {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin: 10px 0 24px;
+
+    }
+
+
+    .stay-highlights span {
+
+      border:
+        1px solid rgba(0, 0, 0, .15);
+
+      padding: 7px 10px;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: .05em;
+
+    }
+
+
+    .stay-day {
+
+      line-height: 1.7;
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .stay-extra {
+
+      margin-top: auto;
+
+      padding-top: 12px;
+
+    }
+
+
+    .stay-button {
+
+      margin-top: 20px;
+
+    }
+
+
+    /* ==========================================
+       COMMON INFORMATION
+       ========================================== */
+
+    .kodaikannal-note {
+
+      margin-top: 35px;
+
+      padding: 25px;
+
+      background: #e8e1d1;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* ==========================================
+       MOBILE
+       ========================================== */
+
+    @media (max-width: 850px) {
+
+      .kodaikannal-stays {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .stay-slider {
+
+        height: 300px;
+
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .kodaikannal-stay-content {
+
+        padding: 22px;
+
+      }
+
+
+      .kodaikannal-stay-content h2 {
+
+        font-size: 26px;
+
+      }
+
+
+      .stay-slider {
+
+        height: 260px;
+
+      }
+
+
+      .slider-prev,
+      .slider-next {
+
+        width: 38px;
+
+        height: 38px;
+
+        font-size: 25px;
+
+      }
+
+
+      .slider-prev {
+
+        left: 10px;
+
+      }
+
+
+      .slider-next {
+
+        right: 10px;
+
+      }
+
+
+      .slider-dots {
+
+        bottom: 10px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body data-page="packages">
+
+
+<div id="site-header"></div>
+
+
+<main>
+
+
+  <!-- ========================================= -->
+  <!-- PAGE TITLE -->
+  <!-- ========================================= -->
+
+  <section class="page-title container kodaikannal-page">
+
+
+    <div class="kodaikannal-hero">
+
+
+      <p class="eyebrow">
+
+        TAMIL NADU · KODAIKANAL
+
+      </p>
+
+
+      <h1>
+
+        Find your<br>
+
+        <em>perfect stay.</em>
+
+      </h1>
+
+
+      <p class="lead">
+
+        Discover four unique stays in the
+        beautiful hills of Kodaikanal.
+        Wake up surrounded by misty
+        mountains, enjoy peaceful evenings
+        around the campfire and experience
+        nature at your own pace.
+
+      </p>
+
+
+    </div>
+
+
+
+    <!-- ======================================= -->
+    <!-- STAYS -->
+    <!-- ======================================= -->
+
+    <div class="kodaikannal-stays">
+
+
+
+      <!-- ===================================== -->
+      <!-- PERUMALAI MIST CABIN -->
+      <!-- ===================================== -->
+
+      <article class="kodaikannal-stay">
+
+
+        <div class="stay-slider">
+
+
+          <img
+            class="stay-slide active"
+            src="images/kodaikanal/perumalai-mist-cabin/image1.jpg.jpeg"
+            alt="Kodaikanal Perumalai Mist Cabin"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/perumalai-mist-cabin/image2.jpg.jpeg"
+            alt="Kodaikanal Perumalai Mist Cabin"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/perumalai-mist-cabin/image3.jpg.jpeg"
+            alt="Kodaikanal Perumalai Mist Cabin"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/perumalai-mist-cabin/image4.jpg.jpeg"
+            alt="Kodaikanal Perumalai Mist Cabin"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/perumalai-mist-cabin/image5.jpg.jpeg"
+            alt="Kodaikanal Perumalai Mist Cabin"
+          >
+
+
+          <button
+            class="slider-prev"
+            type="button"
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+
+
+          <button
+            class="slider-next"
+            type="button"
+            aria-label="Next image"
+          >
+            ›
+          </button>
+
+
+          <div class="slider-dots">
+
+            <button
+              class="slider-dot active"
+              type="button"
+              aria-label="Image 1"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 2"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 3"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 4"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 5"
+            ></button>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="kodaikannal-stay-content">
+
+
+          <p class="eyebrow">
+
+            KODAIKANAL · PERUMALAI
+
+          </p>
+
+
+          <h2>
+
+            🌿 Perumalai – Mist Cabin
+
+          </h2>
+
+
+          <div class="kodaikannal-price">
+
+            ₹1,799 / PERSON
+
+          </div>
+
+
+          <p class="kodaikannal-description">
+
+            A peaceful cabin escape in the
+            misty hills of Kodaikanal, surrounded
+            by greenery, mountain air and
+            beautiful natural views.
+
+          </p>
+
+
+          <div class="stay-highlights">
+
+            <span>Mist Cabin</span>
+
+            <span>Meals</span>
+
+            <span>Nature Experience</span>
+
+            <span>Campfire</span>
+
+            <span>Trekking</span>
+
+          </div>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 1 – Welcome to the Hills!
+            </strong>
+
+            <br>
+
+            Check-in and settle into your cabin.
+            Explore the surrounding nature.
+            Enjoy evening campfire vibes,
+            music and dinner under the stars.
+
+          </p>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 2 – Wake Up to Bliss
+            </strong>
+
+            <br>
+
+            Wake up to the misty mountain views.
+            Enjoy breakfast and tea.
+            Explore the nearby viewpoints
+            before check-out.
+
+          </p>
+
+
+          <div class="stay-extra">
+
+
+            <p>
+
+              <strong>
+                Perfect for:
+              </strong>
+
+              Couples · Friends Groups ·
+              Solo Travellers · Weekend Getaways
+
+            </p>
+
+
+            <button
+              class="btn btn-primary js-book stay-button"
+              data-trip="Kodaikanal – Perumalai Mist Cabin"
+            >
+
+              Book this stay
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- ===================================== -->
+      <!-- PANNAIKADU STONE HOUSE -->
+      <!-- ===================================== -->
+
+      <article class="kodaikannal-stay">
+
+
+        <div class="stay-slider">
+
+
+          <img
+            class="stay-slide active"
+            src="images/kodaikanal/pannaikadu-stone-house/image1.jpg.jpeg"
+            alt="Pannaikadu Stone House Cottage"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/pannaikadu-stone-house/image2.jpg.jpeg"
+            alt="Pannaikadu Stone House Cottage"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/pannaikadu-stone-house/image3.jpg.jpeg"
+            alt="Pannaikadu Stone House Cottage"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/pannaikadu-stone-house/image4.jpg.jpeg"
+            alt="Pannaikadu Stone House Cottage"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/pannaikadu-stone-house/image5.jpg.jpg"
+            alt="Pannaikadu Stone House Cottage"
+          >
+
+
+          <button
+            class="slider-prev"
+            type="button"
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+
+
+          <button
+            class="slider-next"
+            type="button"
+            aria-label="Next image"
+          >
+            ›
+          </button>
+
+
+          <div class="slider-dots">
+
+            <button
+              class="slider-dot active"
+              type="button"
+              aria-label="Image 1"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 2"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 3"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 4"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 5"
+            ></button>
+
+          </div>
+
+
+        </div>
+
+
+
+        <div class="kodaikannal-stay-content">
+
+
+          <p class="eyebrow">
+
+            KODAIKANAL · PANNAIKADU
+
+          </p>
+
+
+          <h2>
+
+            🏡 Pannaikadu – Stone House Cottage
+
+          </h2>
+
+
+          <div class="kodaikannal-price">
+
+            ₹1,799 / PERSON
+
+          </div>
+
+
+          <p class="kodaikannal-description">
+
+            Enjoy a charming stone-house cottage
+            surrounded by the peaceful Pannaikadu
+            landscape, with nature, fresh mountain
+            air and a relaxing getaway atmosphere.
+
+          </p>
+
+
+          <div class="stay-highlights">
+
+            <span>Stone House</span>
+
+            <span>All Meals</span>
+
+            <span>Private Waterfall</span>
+
+            <span>Campfire</span>
+
+            <span>Stargazing</span>
+
+          </div>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 1 – Welcome to Pannaikadu!
+            </strong>
+
+            <br>
+
+            Check-in – 12 PM.
+            Pickup and welcome tea.
+            Private waterfall trek.
+            Campfire with music.
+            BBQ, veg and non-veg dinner
+            with chicken gravy.
+            Stargazing at night.
+
+          </p>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 2 – Wake Up to Nature
+            </strong>
+
+            <br>
+
+            Morning tea and breakfast.
+            Enjoy the peaceful surroundings
+            before check-out.
+
+          </p>
+
+
+          <div class="stay-extra">
+
+
+            <p>
+
+              <strong>
+                Couples:
+              </strong>
+
+              ₹5,999 all-inclusive
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Bachelors:
+              </strong>
+
+              ₹1,999 per person
+              (Minimum 3 people)
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Perfect for:
+              </strong>
+
+              Couples · Friends Groups ·
+              Nature Lovers · Weekend Getaways
+
+            </p>
+
+
+            <button
+              class="btn btn-primary js-book stay-button"
+              data-trip="Kodaikanal – Pannaikadu Stone House Cottage"
+            >
+
+              Book this stay
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- ===================================== -->
+      <!-- PANNAIKADU LOG HOUSE -->
+      <!-- ===================================== -->
+
+      <article class="kodaikannal-stay">
+
+
+        <div class="stay-slider">
+
+
+          <img
+            class="stay-slide active"
+            src="images/kodaikanal/pannaikadu-log-house/image1.jpg.jpeg"
+            alt="Pannaikadu Log House"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/pannaikadu-log-house/image2.jpg.jpeg"
+            alt="Pannaikadu Log House"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/pannaikadu-log-house/image3.jpg.jpeg"
+            alt="Pannaikadu Log House"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/pannaikadu-log-house/image4.jpg.jpeg"
+            alt="Pannaikadu Log House"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/pannaikadu-log-house/image5.jpg.jpeg"
+            alt="Pannaikadu Log House"
+          >
+
+
+          <button
+            class="slider-prev"
+            type="button"
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+
+
+          <button
+            class="slider-next"
+            type="button"
+            aria-label="Next image"
+          >
+            ›
+          </button>
+
+
+          <div class="slider-dots">
+
+            <button
+              class="slider-dot active"
+              type="button"
+              aria-label="Image 1"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 2"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 3"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 4"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 5"
+            ></button>
+
+          </div>
+
+
+        </div>
+
+
+
+        <div class="kodaikannal-stay-content">
+
+
+          <p class="eyebrow">
+
+            KODAIKANAL · PANNAIKADU
+
+          </p>
+
+
+          <h2>
+
+            🪵 Pannaikadu – Log House
+
+          </h2>
+
+
+          <div class="kodaikannal-price">
+
+            ₹1,999 / PERSON
+
+          </div>
+
+
+          <p class="kodaikannal-description">
+
+            Relax in a cosy log-house retreat
+            surrounded by the greenery and
+            peaceful mountain landscape of
+            Pannaikadu.
+
+          </p>
+
+
+          <div class="stay-highlights">
+
+            <span>Log House</span>
+
+            <span>Meals</span>
+
+            <span>Nature Views</span>
+
+            <span>Campfire</span>
+
+            <span>Trekking</span>
+
+          </div>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 1 – Hill Escape Begins
+            </strong>
+
+            <br>
+
+            Check-in and settle into the
+            log house.
+            Explore the natural surroundings.
+            Enjoy campfire, music and dinner
+            under the stars.
+
+          </p>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 2 – Morning in the Hills
+            </strong>
+
+            <br>
+
+            Enjoy morning tea and breakfast.
+            Take in the mountain views and
+            complete your peaceful getaway
+            before check-out.
+
+          </p>
+
+
+          <div class="stay-extra">
+
+
+            <p>
+
+              <strong>
+                Perfect for:
+              </strong>
+
+              Couples · Friends Groups ·
+              Solo Travellers · Weekend Getaways
+
+            </p>
+
+
+            <button
+              class="btn btn-primary js-book stay-button"
+              data-trip="Kodaikanal – Pannaikadu Log House"
+            >
+
+              Book this stay
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- ===================================== -->
+      <!-- POOMBARI TWILIGHT TENT -->
+      <!-- ===================================== -->
+
+      <article class="kodaikannal-stay">
+
+
+        <div class="stay-slider">
+
+
+          <img
+            class="stay-slide active"
+            src="images/kodaikanal/poombarai-twilight-tent/image1.jpg.jpeg"
+            alt="Poombarai Twilight Tent"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/poombarai-twilight-tent/image2.jpg.jpeg"
+            alt="Poombarai Twilight Tent"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/poombarai-twilight-tent/image3.jpg.jpeg"
+            alt="Poombarai Twilight Tent"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/poombarai-twilight-tent/image4.jpg.jpeg"
+            alt="Poombarai Twilight Tent"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/poombarai-twilight-tent/image5.jpg.jpeg"
+            alt="Poombarai Twilight Tent"
+          >
+
+
+          <button
+            class="slider-prev"
+            type="button"
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+
+
+          <button
+            class="slider-next"
+            type="button"
+            aria-label="Next image"
+          >
+            ›
+          </button>
+
+
+          <div class="slider-dots">
+
+            <button
+              class="slider-dot active"
+              type="button"
+              aria-label="Image 1"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 2"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 3"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 4"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 5"
+            ></button>
+
+          </div>
+
+
+        </div>
+
+
+
+        <div class="kodaikannal-stay-content">
+
+
+          <p class="eyebrow">
+
+            KODAIKANAL · POOMBARI
+
+          </p>
+
+
+          <h2>
+
+            🌄 Poombarai – Twilight Tent
+
+          </h2>
+
+
+          <div class="kodaikannal-price">
+
+            ₹1,999 / PERSON
+
+          </div>
+
+
+          <p class="kodaikannal-description">
+
+            A peaceful tent stay in the
+            spectacular Poombarai hills,
+            perfect for travellers looking
+            for mountain views, fresh air
+            and a memorable outdoor escape.
+
+          </p>
+
+
+          <div class="stay-highlights">
+
+            <span>Tent Stay</span>
+
+            <span>Meals</span>
+
+            <span>Campfire</span>
+
+            <span>Sunset Views</span>
+
+            <span>Stargazing</span>
+
+          </div>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 1 – Into the Hills
+            </strong>
+
+            <br>
+
+            Check-in and explore the campsite.
+            Enjoy the sunset views.
+            Campfire with music and dinner
+            under the stars.
+
+          </p>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 2 – Morning Adventure
+            </strong>
+
+            <br>
+
+            Sunrise views.
+            Tea and breakfast.
+            Enjoy the surrounding landscape
+            before check-out.
+
+          </p>
+
+
+          <div class="stay-extra">
+
+
+            <p>
+
+              <strong>
+                Perfect for:
+              </strong>
+
+              Couples · Friends Groups ·
+              Solo Travellers · Weekend Getaways
+
+            </p>
+
+
+            <button
+              class="btn btn-primary js-book stay-button"
+              data-trip="Kodaikanal – Poombarai Twilight Tent"
+            >
+
+              Book this stay
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- ===================================== -->
+      <!-- YELLOW A-FRAME -->
+      <!-- ===================================== -->
+
+      <article class="kodaikannal-stay">
+
+
+        <div class="stay-slider">
+
+
+          <img
+            class="stay-slide active"
+            src="images/kodaikanal/yellow-a-frame/image1.jpg.jpeg"
+            alt="Poombarai Yellow A-Frame Glamping Stay"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/yellow-a-frame/image2.jpg.jpeg"
+            alt="Poombarai Yellow A-Frame Glamping Stay"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/yellow-a-frame/image3.jpg.jpeg"
+            alt="Poombarai Yellow A-Frame Glamping Stay"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/yellow-a-frame/image4.jpg.jpeg"
+            alt="Poombarai Yellow A-Frame Glamping Stay"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/kodaikanal/yellow-a-frame/image5.jpg.jpeg"
+            alt="Poombarai Yellow A-Frame Glamping Stay"
+          >
+
+
+          <button
+            class="slider-prev"
+            type="button"
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+
+
+          <button
+            class="slider-next"
+            type="button"
+            aria-label="Next image"
+          >
+            ›
+          </button>
+
+
+          <div class="slider-dots">
+
+            <button
+              class="slider-dot active"
+              type="button"
+              aria-label="Image 1"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 2"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 3"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 4"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 5"
+            ></button>
+
+          </div>
+
+
+        </div>
+
+
+
+        <div class="kodaikannal-stay-content">
+
+
+          <p class="eyebrow">
+
+            KODAIKANAL · POOMBARI
+
+          </p>
+
+
+          <h2>
+
+            ✨ Poombarai – Yellow A-Frame
+
+          </h2>
+
+
+          <div class="kodaikannal-price">
+
+            ₹2,499 / PERSON
+
+          </div>
+
+
+          <p class="kodaikannal-description">
+
+            A colourful A-frame glamping escape
+            surrounded by lush green hills.
+            Enjoy a unique stay where comfort
+            meets wilderness in beautiful
+            Poombarai.
+
+          </p>
+
+
+          <div class="stay-highlights">
+
+            <span>A-Frame Stay</span>
+
+            <span>All Meals</span>
+
+            <span>Jeep Safari</span>
+
+            <span>Waterfall</span>
+
+            <span>Campfire</span>
+
+            <span>Stargazing</span>
+
+          </div>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 1 – Glamping Getaway
+            </strong>
+
+            <br>
+
+            10:30 AM – Check-in & off-road pickup.
+            Guided trekking and hidden waterfall
+            visit with a chance to take a dip.
+            Authentic veg lunch.
+            Indoor activities.
+            Sunset trekking.
+            Campfire with music.
+            Dinner with veg & non-veg options,
+            BBQ and chicken gravy.
+            Night safari and stargazing.
+
+          </p>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 2 – Sunrise in Poombarai
+            </strong>
+
+            <br>
+
+            Early morning sunrise trek to
+            Poombarai Viewpoint.
+            Tea and snacks with a view.
+            Hearty breakfast.
+            Check-out – 10:30 AM.
+
+          </p>
+
+
+          <div class="stay-extra">
+
+
+            <p>
+
+              <strong>
+                Couples:
+              </strong>
+
+              ₹5,999 all-inclusive
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Bachelors:
+              </strong>
+
+              ₹2,499 per person
+              (Minimum 3 people)
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Location:
+              </strong>
+
+              Poombarai Bus Stop · Kodaikanal
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Perfect for:
+              </strong>
+
+              Couples · Friends Groups ·
+              Adventure Lovers · Weekend Getaways
+
+            </p>
+
+
+            <button
+              class="btn btn-primary js-book stay-button"
+              data-trip="Kodaikanal – Poombarai Yellow A-Frame"
+            >
+
+              Book this stay
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+    </div>
+
+
+
+    <!-- ======================================= -->
+    <!-- COMMON INFORMATION -->
+    <!-- ======================================= -->
+
+    <div class="kodaikannal-note">
+
+
+      <strong>
+        Kodaikanal Stay Facilities:
+      </strong>
+
+
+      Guided tours · On-site support ·
+      Vehicle parking · Charging points ·
+      Snacks & essentials · Clean restrooms
+
+
+      <br><br>
+
+
+      <strong>
+        Perfect for:
+      </strong>
+
+
+      Couples 💑 · Friends Groups 👬👭 ·
+      Solo Travellers 🧍 ·
+      Adventure Lovers 🥾 ·
+      Weekend Getaways ⛺
+
+
+    </div>
+
+
+  </section>
+
+
+</main>
+
+
+
+<div id="site-footer"></div>
+
+
+<div id="booking-modal"></div>
+
+
+
+<script src="js/script.js"></script>
+
+
+
+<!-- ========================================= -->
+<!-- MANUAL SLIDER JAVASCRIPT -->
+<!-- ========================================= -->
+
+<script>
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+
+    const sliders =
+      document.querySelectorAll(
+        ".stay-slider"
+      );
+
+
+    sliders.forEach(
+      function (slider) {
+
+        const slides =
+          slider.querySelectorAll(
+            ".stay-slide"
+          );
+
+
+        const prevButton =
+          slider.querySelector(
+            ".slider-prev"
+          );
+
+
+        const nextButton =
+          slider.querySelector(
+            ".slider-next"
+          );
+
+
+        const dots =
+          slider.querySelectorAll(
+            ".slider-dot"
+          );
+
+
+        let currentIndex = 0;
+
+
+
+        function showSlide(index) {
+
+          if (index < 0) {
+
+            index =
+              slides.length - 1;
+
+          }
+
+
+          if (
+            index >=
+            slides.length
+          ) {
+
+            index = 0;
+
+          }
+
+
+          slides.forEach(
+            function (slide, i) {
+
+              slide.classList.toggle(
+                "active",
+                i === index
+              );
+
+            }
+          );
+
+
+          dots.forEach(
+            function (dot, i) {
+
+              dot.classList.toggle(
+                "active",
+                i === index
+              );
+
+            }
+          );
+
+
+          currentIndex = index;
+
+        }
+
+
+
+        prevButton.addEventListener(
+          "click",
+          function () {
+
+            showSlide(
+              currentIndex - 1
+            );
+
+          }
+        );
+
+
+
+        nextButton.addEventListener(
+          "click",
+          function () {
+
+            showSlide(
+              currentIndex + 1
+            );
+
+          }
+        );
+
+
+
+        dots.forEach(
+          function (dot, index) {
+
+            dot.addEventListener(
+              "click",
+              function () {
+
+                showSlide(index);
+
+              }
+            );
+
+          }
+        );
+
+
+
+        showSlide(0);
+
+      }
+    );
+
+  }
+);
+
+</script>
+
+
+</body>
+
+</html>
+```

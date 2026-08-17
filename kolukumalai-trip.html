@@ -1,0 +1,1323 @@
+```html
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    Kolukumalai Packages | Dreampath Discover
+  </title>
+  
+  <link
+    rel="icon"
+    type="image/png"
+    href="images/kodaikanal complete/WhatsApp Image 2026-08-08 at 1.10.08 PM.jpeg"
+  >
+
+  <meta
+    name="description"
+    content="Explore three unique Kolukumalai stays with Dreampath Discover."
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+  <style>
+
+    /* ==========================================
+       KOLUKUMALAI PAGE
+       ========================================== */
+
+    .kolukumalai-page {
+      padding-bottom: 90px;
+    }
+
+
+    /* ==========================================
+       PAGE INTRO
+       ========================================== */
+
+    .kolukumalai-hero {
+      max-width: 850px;
+      margin-bottom: 55px;
+    }
+
+
+    .kolukumalai-hero h1 {
+      margin-bottom: 20px;
+    }
+
+
+    .kolukumalai-hero .lead {
+      max-width: 720px;
+    }
+
+
+    /* ==========================================
+       PACKAGE GRID
+       ========================================== */
+
+    .kolukumalai-packages {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+
+    /* ==========================================
+       PACKAGE CARD
+       ========================================== */
+
+    .kolukumalai-package {
+      background: #f3efe6;
+      overflow: hidden;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    /* ==========================================
+       IMAGE SLIDER
+       ========================================== */
+
+    .kolukumalai-gallery {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: #ddd;
+    }
+
+
+    .kolukumalai-gallery-track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+      cursor: grab;
+      user-select: none;
+    }
+
+
+    .kolukumalai-gallery-track:active {
+      cursor: grabbing;
+    }
+
+
+    .kolukumalai-gallery-track::-webkit-scrollbar {
+      display: none;
+    }
+
+
+    .kolukumalai-gallery-track img {
+      width: 100%;
+      min-width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      scroll-snap-align: start;
+      pointer-events: none;
+    }
+
+
+    /* ==========================================
+       SLIDER BUTTONS
+       ========================================== */
+
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: 38px;
+      height: 38px;
+
+      border: none;
+      border-radius: 50%;
+
+      background: rgba(255, 255, 255, 0.88);
+
+      color: #173f36;
+
+      font-size: 20px;
+      font-weight: 600;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+
+      z-index: 5;
+
+      transition: all 0.2s ease;
+    }
+
+
+    .gallery-arrow:hover {
+      background: #ffffff;
+      transform: translateY(-50%) scale(1.05);
+    }
+
+
+    .gallery-prev {
+      left: 14px;
+    }
+
+
+    .gallery-next {
+      right: 14px;
+    }
+
+
+    /* ==========================================
+       SLIDE INDICATOR
+       ========================================== */
+
+    .gallery-counter {
+      position: absolute;
+
+      right: 14px;
+      bottom: 14px;
+
+      background: rgba(0, 0, 0, 0.55);
+
+      color: #fff;
+
+      padding: 5px 9px;
+
+      font-size: 11px;
+
+      letter-spacing: .04em;
+
+      border-radius: 20px;
+    }
+
+
+    /* ==========================================
+       PACKAGE CONTENT
+       ========================================== */
+
+    .kolukumalai-package-content {
+      padding: 30px;
+
+      display: flex;
+      flex-direction: column;
+
+      height: 100%;
+    }
+
+
+    .kolukumalai-package-content h2 {
+      font-family: "Playfair Display", serif;
+
+      font-size: 32px;
+
+      line-height: 1.15;
+
+      margin: 8px 0 14px;
+    }
+
+
+    .kolukumalai-price {
+      font-size: 20px;
+
+      font-weight: 700;
+
+      margin-bottom: 18px;
+    }
+
+
+    .kolukumalai-description {
+      line-height: 1.7;
+
+      margin-bottom: 18px;
+    }
+
+
+    /* ==========================================
+       HIGHLIGHTS
+       ========================================== */
+
+    .stay-highlights {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin: 10px 0 24px;
+    }
+
+
+    .stay-highlights span {
+      border: 1px solid rgba(0,0,0,.15);
+
+      padding: 7px 10px;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: .05em;
+    }
+
+
+    /* ==========================================
+       PACKAGE DAYS
+       ========================================== */
+
+    .stay-day {
+      line-height: 1.7;
+
+      margin-bottom: 12px;
+    }
+
+
+    .stay-extra {
+      margin-top: auto;
+
+      padding-top: 12px;
+    }
+
+
+    .stay-button {
+      margin-top: 20px;
+    }
+
+
+    /* ==========================================
+       COMMON INFORMATION
+       ========================================== */
+
+    .kolukumalai-note {
+      margin-top: 35px;
+
+      padding: 25px;
+
+      background: #e8e1d1;
+
+      line-height: 1.8;
+    }
+
+
+    /* ==========================================
+       MOBILE
+       ========================================== */
+
+    @media (max-width: 850px) {
+
+      .kolukumalai-packages {
+        grid-template-columns: 1fr;
+      }
+
+      .kolukumalai-gallery-track img {
+        height: 300px;
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .kolukumalai-package-content {
+        padding: 22px;
+      }
+
+      .kolukumalai-package-content h2 {
+        font-size: 26px;
+      }
+
+      .kolukumalai-gallery-track img {
+        height: 240px;
+      }
+
+      .gallery-arrow {
+        width: 34px;
+        height: 34px;
+        font-size: 17px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body data-page="packages">
+
+
+<div id="site-header"></div>
+
+
+<main>
+
+
+  <!-- =========================================
+       PAGE CONTENT
+       ========================================= -->
+
+  <section class="page-title container kolukumalai-page">
+
+
+    <!-- =======================================
+         PAGE INTRO
+         ======================================= -->
+
+    <div class="kolukumalai-hero">
+
+      <p class="eyebrow">
+        TAMIL NADU · KOLUKUMALAI
+      </p>
+
+      <h1>
+        Stay above<br>
+        <em>the clouds.</em>
+      </h1>
+
+      <p class="lead">
+        Experience the breathtaking beauty of
+        Kolukumalai with comfortable stays,
+        mountain views, trekking adventures,
+        campfire evenings and an unforgettable
+        jeep safari through the hills.
+      </p>
+
+    </div>
+
+
+    <!-- =======================================
+         PACKAGE GRID
+         ======================================= -->
+
+    <div class="kolukumalai-packages">
+
+
+      <!-- =====================================
+           PACKAGE 1
+           TWILIGHT TENTS
+           ===================================== -->
+
+      <article class="kolukumalai-package">
+
+
+        <div class="kolukumalai-gallery">
+
+          <div
+            class="kolukumalai-gallery-track"
+            id="twilight-gallery"
+          >
+
+            <img
+              src="images/kolukumalai/twilight-tents/IMG-20260807-WA0008.jpg"
+              alt="Kolukumalai Twilight Tents"
+            >
+
+            <img
+              src="images/kolukumalai/twilight-tents/IMG-20260807-WA0009.jpg"
+              alt="Kolukumalai Twilight Tents view"
+            >
+
+            <img
+              src="images/kolukumalai/twilight-tents/IMG-20260807-WA0010.jpg"
+              alt="Kolukumalai Twilight Tents surroundings"
+            >
+
+            <img
+              src="images/kolukumalai/twilight-tents/IMG-20260807-WA0011.jpg"
+              alt="Kolukumalai Twilight Tents stay"
+            >
+
+            <img
+              src="images/kolukumalai/twilight-tents/IMG-20260807-WA0012.jpg"
+              alt="Kolukumalai Twilight Tents experience"
+            >
+
+            <img
+              src="images/kolukumalai/twilight-tents/IMG-20260807-WA0013.jpg"
+              alt="Kolukumalai Twilight Tents mountain view"
+            >
+
+            <img
+              src="images/kolukumalai/twilight-tents/IMG-20260807-WA0014.jpg"
+              alt="Kolukumalai Twilight Tents campsite"
+            >
+
+            <img
+              src="images/kolukumalai/twilight-tents/IMG-20260807-WA0020.jpg"
+              alt="Kolukumalai Twilight Tents landscape"
+            >
+
+          </div>
+
+
+          <button
+            type="button"
+            class="gallery-arrow gallery-prev"
+            onclick="slideGallery('twilight-gallery', -1)"
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+
+
+          <button
+            type="button"
+            class="gallery-arrow gallery-next"
+            onclick="slideGallery('twilight-gallery', 1)"
+            aria-label="Next image"
+          >
+            ›
+          </button>
+
+
+          <div class="gallery-counter">
+            8 Photos
+          </div>
+
+        </div>
+
+
+        <div class="kolukumalai-package-content">
+
+          <p class="eyebrow">
+            KOLUKUMALAI
+          </p>
+
+          <h2>
+            ⛺ Kolukumalai Twilight Tents
+          </h2>
+
+          <div class="kolukumalai-price">
+            ₹1,799 / PERSON
+          </div>
+
+          <p class="kolukumalai-description">
+            Enjoy a peaceful tent stay in the
+            beautiful hills of Kolukumalai with
+            trekking adventures, meals,
+            campfire evenings and a thrilling
+            jeep safari.
+          </p>
+
+
+          <div class="stay-highlights">
+
+            <span>Tent Stay</span>
+            <span>Meals</span>
+            <span>Waterfall Trek</span>
+            <span>Campfire</span>
+            <span>Jeep Safari</span>
+
+          </div>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 1 – Adventure Begins
+            </strong>
+
+            <br><br>
+
+            Check-in at 2 PM.
+
+            <br>
+
+            Welcome drink.
+
+            <br>
+
+            Sunset trekking.
+
+            <br>
+
+            Waterfall trekking.
+
+            <br>
+
+            Veg / non-veg dinner.
+
+            <br>
+
+            Campfire with DJ music.
+
+            <br>
+
+            Tent stay.
+
+          </p>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 2 – Explore Kolukumalai
+            </strong>
+
+            <br><br>
+
+            Early wake-up call.
+
+            <br>
+
+            Kolukumalai Jeep Safari.
+
+            <br>
+
+            Black Panther Rock Point.
+
+            <br>
+
+            Tea plantation photo stop.
+
+            <br>
+
+            Morning drink.
+
+            <br>
+
+            Breakfast.
+
+            <br>
+
+            Checkout at 1 PM.
+
+          </p>
+
+
+          <div class="stay-extra">
+
+            <p>
+
+              <strong>
+                Pickup:
+              </strong>
+
+              From Suryanelli —
+              available at additional cost.
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Perfect for:
+              </strong>
+
+              Couples · Friends Groups ·
+              Solo Travellers ·
+              Adventure Lovers
+
+            </p>
+
+
+            <button
+              type="button"
+              class="btn btn-primary js-book stay-button"
+              data-trip="Kolukumalai Twilight Tents"
+            >
+
+              Book this package
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =====================================
+           PACKAGE 2
+           GLASS CASTLE
+           ===================================== -->
+
+      <article class="kolukumalai-package">
+
+
+        <div class="kolukumalai-gallery">
+
+          <div
+            class="kolukumalai-gallery-track"
+            id="glass-gallery"
+          >
+
+            <img
+              src="images/kolukumalai/glass-castle/IMG-20260807-WA0015.jpg"
+              alt="Kolukumalai The Glass Castle"
+            >
+
+            <img
+              src="images/kolukumalai/glass-castle/IMG-20260807-WA0016.jpg"
+              alt="Kolukumalai Glass Castle view"
+            >
+
+            <img
+              src="images/kolukumalai/glass-castle/IMG-20260807-WA0017.jpg"
+              alt="Kolukumalai Glass Castle stay"
+            >
+
+            <img
+              src="images/kolukumalai/glass-castle/IMG-20260807-WA0018.jpg"
+              alt="Kolukumalai Glass Castle surroundings"
+            >
+
+            <img
+              src="images/kolukumalai/glass-castle/IMG-20260807-WA0019.jpg"
+              alt="Kolukumalai Glass Castle landscape"
+            >
+
+            <img
+              src="images/kolukumalai/glass-castle/IMG-20260807-WA0021.jpg"
+              alt="Kolukumalai Glass Castle experience"
+            >
+
+            <img
+              src="images/kolukumalai/glass-castle/IMG-20260807-WA0022.jpg"
+              alt="Kolukumalai Glass Castle mountains"
+            >
+
+            <img
+              src="images/kolukumalai/glass-castle/IMG-20260807-WA0023.jpg"
+              alt="Kolukumalai Glass Castle campsite"
+            >
+
+          </div>
+
+
+          <button
+            type="button"
+            class="gallery-arrow gallery-prev"
+            onclick="slideGallery('glass-gallery', -1)"
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+
+
+          <button
+            type="button"
+            class="gallery-arrow gallery-next"
+            onclick="slideGallery('glass-gallery', 1)"
+            aria-label="Next image"
+          >
+            ›
+          </button>
+
+
+          <div class="gallery-counter">
+            8 Photos
+          </div>
+
+        </div>
+
+
+        <div class="kolukumalai-package-content">
+
+          <p class="eyebrow">
+            KOLUKUMALAI
+          </p>
+
+          <h2>
+            🏕️ Kolukumalai – The Glass Castle
+          </h2>
+
+          <div class="kolukumalai-price">
+            ₹2,499 / PERSON
+          </div>
+
+          <p class="kolukumalai-description">
+            Experience a unique cubical-style
+            stay surrounded by the mountains
+            of Kolukumalai with trekking,
+            delicious meals, campfire evenings
+            and a thrilling jeep safari.
+          </p>
+
+
+          <div class="stay-highlights">
+
+            <span>Cubical Stay</span>
+            <span>Meals</span>
+            <span>Waterfall Trek</span>
+            <span>Campfire</span>
+            <span>Jeep Safari</span>
+
+          </div>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 1 – Welcome to Kolukumalai
+            </strong>
+
+            <br><br>
+
+            Check-in at 2 PM.
+
+            <br>
+
+            Welcome drink.
+
+            <br>
+
+            Sunset trekking.
+
+            <br>
+
+            Waterfall trekking.
+
+            <br>
+
+            Veg / non-veg dinner.
+
+            <br>
+
+            Campfire with DJ music.
+
+            <br>
+
+            Cubical stay.
+
+          </p>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 2 – Jeep Safari
+            </strong>
+
+            <br><br>
+
+            Early wake-up call.
+
+            <br>
+
+            Kolukumalai Jeep Safari.
+
+            <br>
+
+            Black Panther Rock Point.
+
+            <br>
+
+            Tea plantation photo stop.
+
+            <br>
+
+            Morning drink.
+
+            <br>
+
+            Breakfast.
+
+            <br>
+
+            Checkout at 1 PM.
+
+          </p>
+
+
+          <div class="stay-extra">
+
+            <p>
+
+              <strong>
+                Pickup:
+              </strong>
+
+              From Suryanelli —
+              available at additional cost.
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Perfect for:
+              </strong>
+
+              Couples · Friends Groups ·
+              Solo Travellers ·
+              Adventure Lovers
+
+            </p>
+
+
+            <button
+              type="button"
+              class="btn btn-primary js-book stay-button"
+              data-trip="Kolukumalai – The Glass Castle"
+            >
+
+              Book this package
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- =====================================
+           PACKAGE 3
+           LOGWOOD CABIN
+           ===================================== -->
+
+      <article class="kolukumalai-package">
+
+
+        <div class="kolukumalai-gallery">
+
+          <div
+            class="kolukumalai-gallery-track"
+            id="logwood-gallery"
+          >
+
+            <img
+              src="images/kolukumalai/logwood-cabin/IMG-20260807-WA0024.jpg"
+              alt="Kolukumalai The Logwood Cabin"
+            >
+
+            <img
+              src="images/kolukumalai/logwood-cabin/IMG-20260807-WA0025.jpg"
+              alt="Kolukumalai Logwood Cabin view"
+            >
+
+            <img
+              src="images/kolukumalai/logwood-cabin/IMG-20260807-WA0026.jpg"
+              alt="Kolukumalai Logwood Cabin stay"
+            >
+
+            <img
+              src="images/kolukumalai/logwood-cabin/IMG-20260807-WA0027.jpg"
+              alt="Kolukumalai Logwood Cabin surroundings"
+            >
+
+            <img
+              src="images/kolukumalai/logwood-cabin/IMG-20260807-WA0028.jpg"
+              alt="Kolukumalai Logwood Cabin experience"
+            >
+
+            <img
+              src="images/kolukumalai/logwood-cabin/IMG-20260807-WA0029.jpg"
+              alt="Kolukumalai Logwood Cabin mountain view"
+            >
+
+            <img
+              src="images/kolukumalai/logwood-cabin/IMG-20260807-WA0030.jpg"
+              alt="Kolukumalai Logwood Cabin landscape"
+            >
+
+            <img
+              src="images/kolukumalai/logwood-cabin/IMG-20260807-WA0031.jpg"
+              alt="Kolukumalai Logwood Cabin campsite"
+            >
+
+            <img
+              src="images/kolukumalai/logwood-cabin/IMG-20260807-WA0032.jpg"
+              alt="Kolukumalai Logwood Cabin hills"
+            >
+
+            <img
+              src="images/kolukumalai/logwood-cabin/IMG-20260807-WA0033.jpg"
+              alt="Kolukumalai Logwood Cabin stay"
+            >
+
+          </div>
+
+
+          <button
+            type="button"
+            class="gallery-arrow gallery-prev"
+            onclick="slideGallery('logwood-gallery', -1)"
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+
+
+          <button
+            type="button"
+            class="gallery-arrow gallery-next"
+            onclick="slideGallery('logwood-gallery', 1)"
+            aria-label="Next image"
+          >
+            ›
+          </button>
+
+
+          <div class="gallery-counter">
+            10 Photos
+          </div>
+
+        </div>
+
+
+        <div class="kolukumalai-package-content">
+
+          <p class="eyebrow">
+            KOLUKUMALAI
+          </p>
+
+          <h2>
+            🏡 Kolukumalai – The Logwood Cabin
+          </h2>
+
+          <div class="kolukumalai-price">
+            ₹2,999 / PERSON
+          </div>
+
+          <p class="kolukumalai-description">
+            Enjoy a comfortable frame-style
+            stay surrounded by the beautiful
+            Kolukumalai hills, with trekking,
+            meals, campfire evenings and
+            an exciting jeep safari.
+          </p>
+
+
+          <div class="stay-highlights">
+
+            <span>Frame Stay</span>
+            <span>Meals</span>
+            <span>Sunset Trek</span>
+            <span>Campfire</span>
+            <span>Jeep Safari</span>
+
+          </div>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 1 – Mountain Escape
+            </strong>
+
+            <br><br>
+
+            Check-in at 2 PM.
+
+            <br>
+
+            Welcome drink.
+
+            <br>
+
+            Sunset trekking.
+
+            <br>
+
+            Waterfall trekking.
+
+            <br>
+
+            Veg / non-veg dinner.
+
+            <br>
+
+            Campfire with DJ music.
+
+            <br>
+
+            Frame-stay overnight.
+
+          </p>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 2 – Discover Kolukumalai
+            </strong>
+
+            <br><br>
+
+            Early wake-up call.
+
+            <br>
+
+            Kolukumalai Jeep Safari.
+
+            <br>
+
+            Black Panther Rock Point.
+
+            <br>
+
+            Tea plantation photo stop.
+
+            <br>
+
+            Morning drink.
+
+            <br>
+
+            Breakfast.
+
+            <br>
+
+            Checkout at 1 PM.
+
+          </p>
+
+
+          <div class="stay-extra">
+
+            <p>
+
+              <strong>
+                Pickup:
+              </strong>
+
+              From Suryanelli —
+              available at additional cost.
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Perfect for:
+              </strong>
+
+              Couples · Friends Groups ·
+              Solo Travellers ·
+              Adventure Lovers
+
+            </p>
+
+
+            <button
+              type="button"
+              class="btn btn-primary js-book stay-button"
+              data-trip="Kolukumalai – The Logwood Cabin"
+            >
+
+              Book this package
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- =======================================
+         COMMON INFORMATION
+         ======================================= -->
+
+    <div class="kolukumalai-note">
+
+      <strong>
+        Important Information:
+      </strong>
+
+      <br>
+
+      Pickup from Suryanelli is available
+      at an additional cost.
+
+      <br>
+
+      Pickup and drop are
+      <strong>not included</strong>
+      in the base package price.
+
+      <br><br>
+
+      <strong>
+        Perfect for:
+      </strong>
+
+      Couples 💑 · Friends Groups 👬👭 ·
+      Solo Travellers 🧍 ·
+      Adventure Getaways ⛰️
+
+    </div>
+
+
+  </section>
+
+
+</main>
+
+
+<div id="site-footer"></div>
+
+<div id="booking-modal"></div>
+
+
+<!-- =========================================
+     MAIN SCRIPT
+     ========================================= -->
+
+<script src="js/script.js"></script>
+
+
+<!-- =========================================
+     IMAGE SLIDER SCRIPT
+     ========================================= -->
+
+<script>
+
+  function slideGallery(id, direction) {
+
+    const gallery = document.getElementById(id);
+
+    if (!gallery) {
+      return;
+    }
+
+    const slideWidth = gallery.clientWidth;
+
+    gallery.scrollBy({
+      left: direction * slideWidth,
+      behavior: "smooth"
+    });
+
+  }
+
+
+  /* ==========================================
+     MOUSE DRAG SUPPORT
+     ========================================== */
+
+  document.querySelectorAll(
+    ".kolukumalai-gallery-track"
+  ).forEach(function(gallery) {
+
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+
+    gallery.addEventListener(
+      "mousedown",
+      function(e) {
+
+        isDown = true;
+
+        gallery.style.cursor = "grabbing";
+
+        startX =
+          e.pageX - gallery.offsetLeft;
+
+        scrollLeft =
+          gallery.scrollLeft;
+
+      }
+    );
+
+
+    gallery.addEventListener(
+      "mouseleave",
+      function() {
+
+        isDown = false;
+
+        gallery.style.cursor = "grab";
+
+      }
+    );
+
+
+    gallery.addEventListener(
+      "mouseup",
+      function() {
+
+        isDown = false;
+
+        gallery.style.cursor = "grab";
+
+      }
+    );
+
+
+    gallery.addEventListener(
+      "mousemove",
+      function(e) {
+
+        if (!isDown) {
+          return;
+        }
+
+        e.preventDefault();
+
+        const x =
+          e.pageX - gallery.offsetLeft;
+
+        const walk =
+          (x - startX) * 1.5;
+
+        gallery.scrollLeft =
+          scrollLeft - walk;
+
+      }
+    );
+
+  });
+
+
+</script>
+
+
+</body>
+
+</html>
+```
