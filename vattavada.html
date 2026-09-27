@@ -1,0 +1,814 @@
+```html
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    Vattavada Stay | Dreampath Discover
+  </title>
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="images/kodaikanal complete/WhatsApp Image 2026-08-08 at 1.10.08 PM.jpeg"
+  >
+
+  <meta
+    name="description"
+    content="Explore four unique Vattavada stays with Dreampath Discover."
+  >
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Main CSS -->
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+  <style>
+
+    /* ==========================================
+       VATTAVADA PAGE
+       ========================================== */
+
+    .vattavada-page {
+      padding-bottom: 90px;
+    }
+
+
+    /* ==========================================
+       HERO
+       ========================================== */
+
+    .vattavada-hero {
+      max-width: 850px;
+      margin-bottom: 55px;
+    }
+
+
+    .vattavada-hero h1 {
+      margin-bottom: 20px;
+    }
+
+
+    .vattavada-hero .lead {
+      max-width: 720px;
+    }
+
+
+    /* ==========================================
+       STAY GRID
+       ========================================== */
+
+    .vattavada-stays {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+
+    /* ==========================================
+       STAY CARD
+       ========================================== */
+
+    .vattavada-stay {
+      background: #f3efe6;
+      overflow: hidden;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    /* ==========================================
+       STAY IMAGE
+       ========================================== */
+
+    .vattavada-stay-image {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      display: block;
+    }
+
+
+    /* ==========================================
+       STAY CONTENT
+       ========================================== */
+
+    .vattavada-stay-content {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+
+    .vattavada-stay-content h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      line-height: 1.15;
+      margin: 8px 0 14px;
+    }
+
+
+    .vattavada-price {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+
+    .vattavada-description {
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+
+    /* ==========================================
+       HIGHLIGHTS
+       ========================================== */
+
+    .stay-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 24px;
+    }
+
+
+    .stay-highlights span {
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      padding: 7px 10px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+
+    /* ==========================================
+       DAY DETAILS
+       ========================================== */
+
+    .stay-day {
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+
+    .stay-day strong {
+      font-weight: 700;
+    }
+
+
+    /* ==========================================
+       EXTRA INFORMATION
+       ========================================== */
+
+    .stay-extra {
+      margin-top: auto;
+      padding-top: 12px;
+    }
+
+
+    .stay-extra p {
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+
+    /* ==========================================
+       BOOK BUTTON
+       ========================================== */
+
+    .stay-button {
+      margin-top: 20px;
+    }
+
+
+    /* ==========================================
+       INFORMATION NOTE
+       ========================================== */
+
+    .vattavada-note {
+      margin-top: 35px;
+      padding: 25px;
+      background: #e8e1d1;
+      line-height: 1.8;
+    }
+
+
+    .vattavada-note strong {
+      font-weight: 700;
+    }
+
+
+    /* ==========================================
+       TABLET
+       ========================================== */
+
+    @media (max-width: 850px) {
+
+      .vattavada-stays {
+        grid-template-columns: 1fr;
+      }
+
+      .vattavada-stay-image {
+        height: 300px;
+      }
+
+    }
+
+
+    /* ==========================================
+       MOBILE
+       ========================================== */
+
+    @media (max-width: 500px) {
+
+      .vattavada-stay-content {
+        padding: 22px;
+      }
+
+      .vattavada-stay-content h2 {
+        font-size: 26px;
+      }
+
+      .vattavada-stay-image {
+        height: 260px;
+      }
+
+      .vattavada-note {
+        padding: 20px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body data-page="packages">
+
+
+  <!-- =========================================
+       HEADER
+       ========================================= -->
+
+  <div id="site-header"></div>
+
+
+  <!-- =========================================
+       MAIN CONTENT
+       ========================================= -->
+
+  <main>
+
+    <section class="page-title container vattavada-page">
+
+
+      <!-- =======================================
+           HERO
+           ======================================= -->
+
+      <div class="vattavada-hero">
+
+        <p class="eyebrow">
+          KERALA · VATTAVADA
+        </p>
+
+        <h1>
+          Find your<br>
+          <em>perfect stay.</em>
+        </h1>
+
+        <p class="lead">
+          Discover four unique stays in the
+          beautiful hills of Vattavada.
+          Wake up to mountain views,
+          enjoy peaceful evenings around
+          the campfire and experience
+          nature at your own pace.
+        </p>
+
+      </div>
+
+
+      <!-- =======================================
+           FOUR VATTAVADA STAYS
+           ======================================= -->
+
+      <div class="vattavada-stays">
+
+
+        <!-- =====================================
+             1. SKY TENT
+             ===================================== -->
+
+        <article class="vattavada-stay">
+
+          <img
+            class="vattavada-stay-image"
+            src="images/vattavada/sky-tent/IMG-20260808-WA0000.jpg"
+            alt="Vattavada Sky Tent"
+            loading="lazy"
+          >
+
+          <div class="vattavada-stay-content">
+
+            <p class="eyebrow">
+              VATTAVADA · 2 DAYS / 1 NIGHT
+            </p>
+
+            <h2>
+              ⛺ Vattavada – Sky Tent
+            </h2>
+
+            <div class="vattavada-price">
+              ₹1,599 / PERSON
+            </div>
+
+            <p class="vattavada-description">
+              A hilltop escape like never before.
+              Enjoy a peaceful campsite stay
+              surrounded by mountains, mist
+              and beautiful natural views.
+            </p>
+
+
+            <div class="stay-highlights">
+
+              <span>Sky Tent</span>
+              <span>Meals</span>
+              <span>Waterfall Fun</span>
+              <span>Campfire</span>
+              <span>Viewpoint Trekking</span>
+
+            </div>
+
+
+            <p class="stay-day">
+
+              <strong>
+                Day 1 – Welcome to the Hills!
+              </strong>
+
+              <br>
+
+              Check-in – 2 PM.
+              Nature's Dip – Waterfall Fun.
+              Campfire vibes with music.
+              Dinner under the stars.
+              Hilltop stay.
+
+            </p>
+
+
+            <p class="stay-day">
+
+              <strong>
+                Day 2 – Wake Up to Bliss
+              </strong>
+
+              <br>
+
+              Sunrise view from the campsite.
+              Hot breakfast and tea.
+              Viewpoint trekking.
+              Check-out – 12 PM.
+
+            </p>
+
+
+            <div class="stay-extra">
+
+              <p>
+                <strong>Perfect for:</strong>
+                Couples · Friends Groups ·
+                Solo Travellers · Weekend Getaways
+              </p>
+
+
+              <button
+                type="button"
+                class="btn btn-primary js-book stay-button"
+                data-trip="Vattavada – Sky Tent"
+              >
+                Book this stay
+                <span>→</span>
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================================
+             2. MUD HUT
+             ===================================== -->
+
+        <article class="vattavada-stay">
+
+          <img
+            class="vattavada-stay-image"
+            src="images/vattavada/mud-hut/IMG-20260808-WA0017.jpg"
+            alt="Vattavada Mud Hut Stay"
+            loading="lazy"
+          >
+
+          <div class="vattavada-stay-content">
+
+            <p class="eyebrow">
+              VATTAVADA · 2 DAYS / 1 NIGHT
+            </p>
+
+            <h2>
+              ❤️ Vattavada – Mud Hut Stay
+            </h2>
+
+            <div class="vattavada-price">
+              ₹2,199 / PERSON
+            </div>
+
+            <p class="vattavada-description">
+              Experience a rustic hilltop escape
+              with a unique mud-hut style stay
+              surrounded by the peaceful
+              Vattavada landscape.
+            </p>
+
+
+            <div class="stay-highlights">
+
+              <span>Mud Hut</span>
+              <span>Meals</span>
+              <span>Waterfall Fun</span>
+              <span>Campfire</span>
+              <span>Viewpoint Trekking</span>
+
+            </div>
+
+
+            <p class="stay-day">
+
+              <strong>
+                Day 1 – Welcome to the Hills!
+              </strong>
+
+              <br>
+
+              Check-in – 2 PM.
+              Waterfall Fun.
+              Campfire with music.
+              Dinner under the stars.
+              Hilltop stay.
+
+            </p>
+
+
+            <p class="stay-day">
+
+              <strong>
+                Day 2 – Wake Up to Bliss
+              </strong>
+
+              <br>
+
+              Sunrise view.
+              Hot breakfast and tea.
+              Viewpoint trekking.
+              Check-out – 12 PM.
+
+            </p>
+
+
+            <div class="stay-extra">
+
+              <p>
+                <strong>Couple:</strong>
+                ₹6,000 per person
+              </p>
+
+              <p>
+                <strong>Perfect for:</strong>
+                Couples · Friends Groups ·
+                Solo Travellers · Weekend Getaways
+              </p>
+
+
+              <button
+                type="button"
+                class="btn btn-primary js-book stay-button"
+                data-trip="Vattavada – Mud Hut Stay"
+              >
+                Book this stay
+                <span>→</span>
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================================
+             3. COCOON STAY
+             ===================================== -->
+
+        <article class="vattavada-stay">
+
+          <img
+            class="vattavada-stay-image"
+            src="images/vattavada/cocoon/IMG-20260808-WA0013.jpg"
+            alt="Vattavada Cocoon Stay Mist"
+            loading="lazy"
+          >
+
+          <div class="vattavada-stay-content">
+
+            <p class="eyebrow">
+              VATTAVADA · 2 DAYS / 1 NIGHT
+            </p>
+
+            <h2>
+              ⛰️ Vattavada – Cocoon Stay Mist
+            </h2>
+
+            <div class="vattavada-price">
+              ₹1,999 / PERSON
+            </div>
+
+            <p class="vattavada-description">
+              A unique cocoon-style stay
+              surrounded by misty mountains,
+              greenery and peaceful
+              hill-country views.
+            </p>
+
+
+            <div class="stay-highlights">
+
+              <span>Cocoon Stay</span>
+              <span>Meals</span>
+              <span>Waterfall Fun</span>
+              <span>Campfire</span>
+              <span>Viewpoint Trekking</span>
+
+            </div>
+
+
+            <p class="stay-day">
+
+              <strong>
+                Day 1 – Welcome to the Hills!
+              </strong>
+
+              <br>
+
+              Check-in – 2 PM.
+              Waterfall Fun.
+              Campfire with music.
+              Dinner under the stars.
+              Hilltop stay.
+
+            </p>
+
+
+            <p class="stay-day">
+
+              <strong>
+                Day 2 – Wake Up to Bliss
+              </strong>
+
+              <br>
+
+              Sunrise view.
+              Hot breakfast and tea.
+              Viewpoint trekking.
+              Check-out – 12 PM.
+
+            </p>
+
+
+            <div class="stay-extra">
+
+              <p>
+                <strong>Couple:</strong>
+                ₹6,000 per person
+              </p>
+
+              <p>
+                <strong>Perfect for:</strong>
+                Couples · Friends Groups ·
+                Solo Travellers · Weekend Getaways
+              </p>
+
+
+              <button
+                type="button"
+                class="btn btn-primary js-book stay-button"
+                data-trip="Vattavada – Cocoon Stay Mist"
+              >
+                Book this stay
+                <span>→</span>
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- =====================================
+             4. TREE HOUSE
+             ===================================== -->
+
+        <article class="vattavada-stay">
+
+          <img
+            class="vattavada-stay-image"
+            src="images/vattavada/tree-house/IMG-20260808-WA0005.jpg"
+            alt="Vattavada Tree House"
+            loading="lazy"
+          >
+
+          <div class="vattavada-stay-content">
+
+            <p class="eyebrow">
+              VATTAVADA · 2 DAYS / 1 NIGHT
+            </p>
+
+            <h2>
+              🌳 Vattavada – Tree House
+            </h2>
+
+            <div class="vattavada-price">
+              ₹1,999 / PERSON
+            </div>
+
+            <p class="vattavada-description">
+              Stay above the ground and
+              experience Vattavada from a
+              beautiful tree-house retreat
+              surrounded by the hills.
+            </p>
+
+
+            <div class="stay-highlights">
+
+              <span>Tree House</span>
+              <span>Meals</span>
+              <span>Waterfall Fun</span>
+              <span>Campfire</span>
+              <span>Viewpoint Trekking</span>
+
+            </div>
+
+
+            <p class="stay-day">
+
+              <strong>
+                Day 1 – Welcome to the Hills!
+              </strong>
+
+              <br>
+
+              Check-in – 2 PM.
+              Waterfall Fun.
+              Campfire with music.
+              Dinner under the stars.
+              Hilltop stay.
+
+            </p>
+
+
+            <p class="stay-day">
+
+              <strong>
+                Day 2 – Wake Up to Bliss
+              </strong>
+
+              <br>
+
+              Sunrise view.
+              Hot breakfast and tea.
+              Viewpoint trekking.
+              Check-out – 12 PM.
+
+            </p>
+
+
+            <div class="stay-extra">
+
+              <p>
+                <strong>Couple:</strong>
+                ₹5,500 per person
+              </p>
+
+              <p>
+                <strong>Perfect for:</strong>
+                Couples · Friends Groups ·
+                Solo Travellers · Weekend Getaways
+              </p>
+
+
+              <button
+                type="button"
+                class="btn btn-primary js-book stay-button"
+                data-trip="Vattavada – Tree House"
+              >
+                Book this stay
+                <span>→</span>
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+
+      <!-- =======================================
+           COMMON INFORMATION
+           ======================================= -->
+
+      <div class="vattavada-note">
+
+        <strong>
+          Optional Add-ons:
+        </strong>
+
+        Pickup vehicle is available at
+        an additional cost.
+
+        Pickup and drop are
+        <strong>not included</strong>
+        in the base package.
+
+        <br><br>
+
+        <strong>
+          Perfect for:
+        </strong>
+
+        Couples 💑 ·
+        Friends Groups 👬👭 ·
+        Solo Travellers 🧍 ·
+        Weekend Getaways ⛺
+
+      </div>
+
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+
+  <div id="site-footer"></div>
+
+
+  <!-- =========================================
+       BOOKING MODAL
+       ========================================= -->
+
+  <div id="booking-modal"></div>
+
+
+  <!-- =========================================
+       JAVASCRIPT
+       ========================================= -->
+
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
+```

@@ -1,0 +1,1543 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    Munnar Complete Packages | Dreampath Discover
+  </title>
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="images/kodaikanal complete/WhatsApp Image 2026-08-08 at 1.10.08 PM.jpeg"
+  >
+
+  <meta
+    name="description"
+    content="Explore unique Munnar stays with Dreampath Discover."
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+
+  <style>
+
+    /* ==========================================
+       MUNNAR PAGE
+       ========================================== */
+
+    .munnar-page {
+      padding-bottom: 90px;
+    }
+
+
+    .munnar-hero {
+      max-width: 850px;
+      margin-bottom: 55px;
+    }
+
+
+    .munnar-hero h1 {
+      margin-bottom: 20px;
+    }
+
+
+    .munnar-hero .lead {
+      max-width: 720px;
+    }
+
+
+    /* ==========================================
+       STAY GRID
+       ========================================== */
+
+    .munnar-stays {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+
+    /* ==========================================
+       STAY CARD
+       ========================================== */
+
+    .munnar-stay {
+      background: #f3efe6;
+      overflow: hidden;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    /* ==========================================
+       IMAGE SLIDER
+       ========================================== */
+
+    .stay-slider {
+      width: 100%;
+      height: 340px;
+      position: relative;
+      overflow: hidden;
+      background: #ddd;
+    }
+
+
+    .stay-slide {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+
+    .stay-slide.active {
+      display: block;
+    }
+
+
+    /* ==========================================
+       SLIDER BUTTONS
+       ========================================== */
+
+    .slider-prev,
+    .slider-next {
+
+      position: absolute;
+
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      width: 44px;
+      height: 44px;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background: rgba(0, 0, 0, 0.55);
+
+      color: #fff;
+
+      font-size: 30px;
+
+      line-height: 1;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      cursor: pointer;
+
+      z-index: 5;
+
+      transition:
+        background .2s,
+        transform .2s;
+
+    }
+
+
+    .slider-prev {
+      left: 15px;
+    }
+
+
+    .slider-next {
+      right: 15px;
+    }
+
+
+    .slider-prev:hover,
+    .slider-next:hover {
+
+      background: rgba(0, 0, 0, 0.8);
+
+      transform:
+        translateY(-50%)
+        scale(1.05);
+
+    }
+
+
+    /* ==========================================
+       SLIDER DOTS
+       ========================================== */
+
+    .slider-dots {
+
+      position: absolute;
+
+      left: 50%;
+
+      bottom: 15px;
+
+      transform: translateX(-50%);
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      z-index: 6;
+
+    }
+
+
+    .slider-dot {
+
+      width: 9px;
+      height: 9px;
+
+      padding: 0;
+
+      border: 1px solid #fff;
+
+      border-radius: 50%;
+
+      background: rgba(255, 255, 255, 0.45);
+
+      cursor: pointer;
+
+      transition:
+        background .2s,
+        transform .2s;
+
+    }
+
+
+    .slider-dot.active {
+
+      background: #fff;
+
+      transform: scale(1.25);
+
+    }
+
+
+    .slider-dot:hover {
+
+      background: #fff;
+
+    }
+
+
+    /* ==========================================
+       STAY CONTENT
+       ========================================== */
+
+    .munnar-stay-content {
+
+      padding: 30px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      height: 100%;
+
+    }
+
+
+    .munnar-stay-content h2 {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 32px;
+
+      line-height: 1.15;
+
+      margin: 8px 0 14px;
+
+    }
+
+
+    .munnar-price {
+
+      font-size: 20px;
+
+      font-weight: 700;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .munnar-description {
+
+      line-height: 1.7;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    /* ==========================================
+       DETAILS
+       ========================================== */
+
+    .stay-highlights {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin: 10px 0 24px;
+
+    }
+
+
+    .stay-highlights span {
+
+      border:
+        1px solid rgba(0, 0, 0, .15);
+
+      padding: 7px 10px;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: .05em;
+
+    }
+
+
+    .stay-day {
+
+      line-height: 1.7;
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .stay-extra {
+
+      margin-top: auto;
+
+      padding-top: 12px;
+
+    }
+
+
+    .stay-button {
+
+      margin-top: 20px;
+
+    }
+
+
+    /* ==========================================
+       COMMON INFORMATION
+       ========================================== */
+
+    .munnar-note {
+
+      margin-top: 35px;
+
+      padding: 25px;
+
+      background: #e8e1d1;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* ==========================================
+       MOBILE
+       ========================================== */
+
+    @media (max-width: 850px) {
+
+      .munnar-stays {
+
+        grid-template-columns: 1fr;
+
+      }
+
+
+      .stay-slider {
+
+        height: 300px;
+
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .munnar-stay-content {
+
+        padding: 22px;
+
+      }
+
+
+      .munnar-stay-content h2 {
+
+        font-size: 26px;
+
+      }
+
+
+      .stay-slider {
+
+        height: 260px;
+
+      }
+
+
+      .slider-prev,
+      .slider-next {
+
+        width: 38px;
+
+        height: 38px;
+
+        font-size: 25px;
+
+      }
+
+
+      .slider-prev {
+
+        left: 10px;
+
+      }
+
+
+      .slider-next {
+
+        right: 10px;
+
+      }
+
+
+      .slider-dots {
+
+        bottom: 10px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body data-page="packages">
+
+
+<div id="site-header"></div>
+
+
+<main>
+
+
+  <!-- ========================================= -->
+  <!-- PAGE TITLE -->
+  <!-- ========================================= -->
+
+  <section class="page-title container munnar-page">
+
+
+    <div class="munnar-hero">
+
+
+      <p class="eyebrow">
+
+        KERALA · MUNNAR
+
+      </p>
+
+
+      <h1>
+
+        Find your<br>
+
+        <em>perfect stay.</em>
+
+      </h1>
+
+
+      <p class="lead">
+
+        Discover three unique hilltop stays
+        in the beautiful hills of Munnar.
+        Enjoy swimming, campfire evenings,
+        delicious meals, sunrise views and
+        peaceful nights surrounded by nature.
+
+      </p>
+
+
+    </div>
+
+
+
+    <!-- ======================================= -->
+    <!-- STAYS -->
+    <!-- ======================================= -->
+
+    <div class="munnar-stays">
+
+
+
+      <!-- ===================================== -->
+      <!-- A FRAME STAY -->
+      <!-- ===================================== -->
+
+      <article class="munnar-stay">
+
+
+        <div class="stay-slider">
+
+
+          <img
+            class="stay-slide active"
+            src="images/munnar complte  frame stay/WhatsApp Image 2026-08-11 at 11.37.23 AM.jpeg"
+            alt="Munnar A Frame Stay Swimming Pool"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/munnar complte  frame stay/WhatsApp Image 2026-08-11 at 11.37.44 AM.jpeg"
+            alt="Munnar A Frame Stay"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/munnar complte  frame stay/WhatsApp Image 2026-08-11 at 11.37.57 AM.jpeg"
+            alt="Munnar A Frame Stay"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/munnar complte  frame stay/WhatsApp Image 2026-08-11 at 11.38.36 AM (1).jpeg"
+            alt="Munnar A Frame Stay"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/munnar complte  frame stay/WhatsApp Image 2026-08-11 at 11.38.36 AM (2).jpeg"
+            alt="Munnar A Frame Stay"
+          >
+
+
+          <button
+            class="slider-prev"
+            type="button"
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+
+
+          <button
+            class="slider-next"
+            type="button"
+            aria-label="Next image"
+          >
+            ›
+          </button>
+
+
+          <div class="slider-dots">
+
+            <button
+              class="slider-dot active"
+              type="button"
+              aria-label="Image 1"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 2"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 3"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 4"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 5"
+            ></button>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="munnar-stay-content">
+
+
+          <p class="eyebrow">
+
+            MUNNAR · HILLTOP
+
+          </p>
+
+
+          <h2>
+
+            ✨ A Frame Stay – Swimming
+
+          </h2>
+
+
+          <div class="munnar-price">
+
+            ₹1,999 / PERSON
+
+          </div>
+
+
+          <p class="munnar-description">
+
+            ⛰️ A hilltop escape like never before.
+            Stay in a beautiful A-frame accommodation
+            surrounded by nature and enjoy swimming,
+            campfire vibes, delicious meals and
+            stunning sunrise views.
+
+          </p>
+
+
+          <div class="stay-highlights">
+
+            <span>Frame Stay</span>
+
+            <span>Meals</span>
+
+            <span>Swimming Pool</span>
+
+            <span>Campfire Nights</span>
+
+            <span>Sunrise View</span>
+
+          </div>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 1 – Welcome to the Hills!
+            </strong>
+
+            <br>
+
+            Check-in – 2 PM.
+            Dive into the fun with swimming pool
+            activity.
+            Enjoy campfire vibes with music.
+            Dinner under the stars.
+            Spend the night in your hilltop stay
+            surrounded by nature.
+
+          </p>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 2 – Wake Up to Bliss
+            </strong>
+
+            <br>
+
+            Wake up to a beautiful sunrise view
+            from the campsite.
+            Capture Insta-worthy moments.
+            Enjoy hot breakfast and tea with a view.
+            Have another splash in the swimming pool
+            before leaving.
+            Check-out – 12 PM.
+
+          </p>
+
+
+          <div class="stay-extra">
+
+
+            <p>
+
+              <strong>
+                Optional Add-on:
+              </strong>
+
+              Pickup vehicle available
+              at extra cost.
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Pickup & Drop:
+              </strong>
+
+              Not included in the base package.
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Perfect for:
+              </strong>
+
+              Couples · Friends Groups ·
+              Solo Travellers · Weekend Getaways
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Campsite Facilities:
+              </strong>
+
+              On-site support · Plenty of parking ·
+              Charging points · Snacks & essentials ·
+              Clean and accessible restrooms
+
+            </p>
+
+
+            <button
+              class="btn btn-primary js-book stay-button"
+              data-trip="Munnar – A Frame Stay – Swimming"
+            >
+
+              Book this stay
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- ===================================== -->
+      <!-- HILL TOP TENT STAY -->
+      <!-- ===================================== -->
+
+      <article class="munnar-stay">
+
+
+        <div class="stay-slider">
+
+
+          <img
+            class="stay-slide active"
+            src="images/munnar tent stay/WhatsApp Image 2026-08-11 at 11.51.23 AM (1).jpeg"
+            alt="Munnar Hill Top Tent Stay Swimming Pool"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/munnar tent stay/WhatsApp Image 2026-08-11 at 11.51.22 AM (1).jpeg"
+            alt="Munnar Hill Top Tent Stay"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/munnar tent stay/WhatsApp Image 2026-08-11 at 11.51.22 AM.jpeg"
+            alt="Munnar Hill Top Tent Stay"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/munnar complte  frame stay/WhatsApp Image 2026-08-11 at 11.37.23 AM.jpeg"
+            alt="Munnar Hill Top Tent Stay"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/munnar tent stay/WhatsApp Image 2026-08-11 at 11.51.23 AM.jpeg"
+            alt="Munnar Hill Top Tent Stay"
+          >
+
+
+          <button
+            class="slider-prev"
+            type="button"
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+
+
+          <button
+            class="slider-next"
+            type="button"
+            aria-label="Next image"
+          >
+            ›
+          </button>
+
+
+          <div class="slider-dots">
+
+            <button
+              class="slider-dot active"
+              type="button"
+              aria-label="Image 1"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 2"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 3"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 4"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 5"
+            ></button>
+
+          </div>
+
+
+        </div>
+
+
+
+        <div class="munnar-stay-content">
+
+
+          <p class="eyebrow">
+
+            MUNNAR · HILLTOP
+
+          </p>
+
+
+          <h2>
+
+            ✨ Hill Top Tent Stay – Swimming Pool
+
+          </h2>
+
+
+          <div class="munnar-price">
+
+            ₹1,499 / PERSON
+
+          </div>
+
+
+          <p class="munnar-description">
+
+            ⛰️ A hilltop escape like never before.
+            Experience a peaceful tent stay in the
+            beautiful hills of Munnar with swimming,
+            campfire evenings, meals and refreshing
+            sunrise views.
+
+          </p>
+
+
+          <div class="stay-highlights">
+
+            <span>Tent Stay</span>
+
+            <span>Meals</span>
+
+            <span>Swimming Pool</span>
+
+            <span>Campfire Nights</span>
+
+            <span>Sunrise View</span>
+
+          </div>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 1 – Welcome to the Hills!
+            </strong>
+
+            <br>
+
+            Check-in – 2 PM.
+            Dive into the fun with swimming pool
+            activity.
+            Enjoy campfire vibes with music.
+            Dinner under the stars.
+            Relax and spend the night in your
+            hilltop tent surrounded by nature.
+
+          </p>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 2 – Wake Up to Bliss
+            </strong>
+
+            <br>
+
+            Wake up to the beautiful sunrise view
+            from the campsite.
+            Capture Insta-worthy moments.
+            Enjoy hot breakfast and tea with a view.
+            Have another splash in the swimming pool
+            before departure.
+            Check-out – 12 PM.
+
+          </p>
+
+
+          <div class="stay-extra">
+
+
+            <p>
+
+              <strong>
+                Optional Add-on:
+              </strong>
+
+              Pickup vehicle available
+              at extra cost.
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Pickup & Drop:
+              </strong>
+
+              Not included in the base package.
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Perfect for:
+              </strong>
+
+              Couples · Friends Groups ·
+              Solo Travellers · Weekend Getaways
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Campsite Facilities:
+              </strong>
+
+              On-site support · Plenty of parking ·
+              Charging points · Snacks & essentials ·
+              Clean and accessible restrooms
+
+            </p>
+
+
+            <button
+              class="btn btn-primary js-book stay-button"
+              data-trip="Munnar – Hill Top Tent Stay – Swimming Pool"
+            >
+
+              Book this stay
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- ===================================== -->
+      <!-- DOUBLE DUCKER STAY -->
+      <!-- ===================================== -->
+
+      <article class="munnar-stay">
+
+
+        <div class="stay-slider">
+
+
+          <img
+            class="stay-slide active"
+            src="images/munnar frame stay/WhatsApp Image 2026-08-11 at 11.58.01 AM.jpeg"
+            alt="Munnar Double Ducker Swimming Pool Stay"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/munnar frame stay/WhatsApp Image 2026-08-11 at 11.52.06 AM.jpeg"
+            alt="Munnar Double Ducker Stay"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/munnar frame stay/WhatsApp Image 2026-08-11 at 11.58.57 AM.jpeg"
+            alt="Munnar Double Ducker Stay"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/munnar complte  frame stay/WhatsApp Image 2026-08-11 at 11.37.23 AM.jpeg"
+            alt="Munnar Double Ducker Stay"
+          >
+
+
+          <img
+            class="stay-slide"
+            src="images/munnar frame stay/WhatsApp Image 2026-08-11 at 11.58.56 AM.jpeg"
+            alt="Munnar Double Ducker Stay"
+          >
+
+
+          <button
+            class="slider-prev"
+            type="button"
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+
+
+          <button
+            class="slider-next"
+            type="button"
+            aria-label="Next image"
+          >
+            ›
+          </button>
+
+
+          <div class="slider-dots">
+
+            <button
+              class="slider-dot active"
+              type="button"
+              aria-label="Image 1"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 2"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 3"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 4"
+            ></button>
+
+            <button
+              class="slider-dot"
+              type="button"
+              aria-label="Image 5"
+            ></button>
+
+          </div>
+
+
+        </div>
+
+
+
+        <div class="munnar-stay-content">
+
+
+          <p class="eyebrow">
+
+            MUNNAR · HILLTOP
+
+          </p>
+
+
+          <h2>
+
+            ✨ Double Ducker – Swimming Pool Stay
+
+          </h2>
+
+
+          <div class="munnar-price">
+
+            ₹1,999 / PERSON
+
+          </div>
+
+
+          <p class="munnar-description">
+
+            ⛰️ A hilltop escape like never before.
+            Enjoy a unique Double Ducker stay
+            surrounded by nature, with swimming
+            pool activities, campfire nights,
+            delicious meals and beautiful
+            mountain sunrise views.
+
+          </p>
+
+
+          <div class="stay-highlights">
+
+            <span>Double Ducker Stay</span>
+
+            <span>Meals</span>
+
+            <span>Swimming Pool</span>
+
+            <span>Campfire Nights</span>
+
+            <span>Sunrise View</span>
+
+          </div>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 1 – Welcome to the Hills!
+            </strong>
+
+            <br>
+
+            Check-in – 2 PM.
+            Dive into the fun with swimming pool
+            activity.
+            Enjoy campfire vibes with music.
+            Dinner under the stars.
+            Spend the night in the unique
+            Double Ducker hilltop stay.
+
+          </p>
+
+
+          <p class="stay-day">
+
+            <strong>
+              Day 2 – Wake Up to Bliss
+            </strong>
+
+            <br>
+
+            Wake up to the beautiful sunrise view
+            from the campsite.
+            Capture Insta-worthy moments.
+            Enjoy hot breakfast and tea with a view.
+            Have another splash in the swimming pool
+            before you go.
+            Check-out – 12 PM.
+
+          </p>
+
+
+          <div class="stay-extra">
+
+
+            <p>
+
+              <strong>
+                Optional Add-on:
+              </strong>
+
+              Pickup vehicle available
+              at extra cost.
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Pickup & Drop:
+              </strong>
+
+              Not included in the base package.
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Perfect for:
+              </strong>
+
+              Couples · Friends Groups ·
+              Solo Travellers · Weekend Getaways
+
+            </p>
+
+
+            <p>
+
+              <strong>
+                Campsite Facilities:
+              </strong>
+
+              On-site support · Plenty of parking ·
+              Charging points · Snacks & essentials ·
+              Clean and accessible restrooms
+
+            </p>
+
+
+            <button
+              class="btn btn-primary js-book stay-button"
+              data-trip="Munnar – Double Ducker – Swimming Pool Stay"
+            >
+
+              Book this stay
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+    </div>
+
+
+
+    <!-- ======================================= -->
+    <!-- COMMON INFORMATION -->
+    <!-- ======================================= -->
+
+    <div class="munnar-note">
+
+
+      <strong>
+        Munnar Stay Facilities:
+      </strong>
+
+
+      On-site support · Plenty of parking ·
+      Charging points · Snacks & essentials ·
+      Clean and accessible restrooms
+
+
+      <br><br>
+
+
+      <strong>
+        Perfect for:
+      </strong>
+
+
+      Couples 💑 · Friends Groups 👬👭 ·
+      Solo Travellers 🧍 ·
+      Weekend Getaways ⛺
+
+
+      <br><br>
+
+
+      <strong>
+        Important:
+      </strong>
+
+
+      Pickup and drop facilities are
+      not included in the base package.
+      Pickup vehicles are available as
+      an optional add-on at extra cost.
+
+
+    </div>
+
+
+  </section>
+
+
+</main>
+
+
+
+<div id="site-footer"></div>
+
+
+<div id="booking-modal"></div>
+
+
+
+<script src="js/script.js"></script>
+
+
+
+<!-- ========================================= -->
+<!-- MANUAL SLIDER JAVASCRIPT -->
+<!-- ========================================= -->
+
+<script>
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+
+    const sliders =
+      document.querySelectorAll(
+        ".stay-slider"
+      );
+
+
+    sliders.forEach(
+      function (slider) {
+
+        const slides =
+          slider.querySelectorAll(
+            ".stay-slide"
+          );
+
+
+        const prevButton =
+          slider.querySelector(
+            ".slider-prev"
+          );
+
+
+        const nextButton =
+          slider.querySelector(
+            ".slider-next"
+          );
+
+
+        const dots =
+          slider.querySelectorAll(
+            ".slider-dot"
+          );
+
+
+        let currentIndex = 0;
+
+
+
+        function showSlide(index) {
+
+          if (index < 0) {
+
+            index =
+              slides.length - 1;
+
+          }
+
+
+          if (
+            index >=
+            slides.length
+          ) {
+
+            index = 0;
+
+          }
+
+
+          slides.forEach(
+            function (slide, i) {
+
+              slide.classList.toggle(
+                "active",
+                i === index
+              );
+
+            }
+          );
+
+
+          dots.forEach(
+            function (dot, i) {
+
+              dot.classList.toggle(
+                "active",
+                i === index
+              );
+
+            }
+          );
+
+
+          currentIndex = index;
+
+        }
+
+
+
+        prevButton.addEventListener(
+          "click",
+          function () {
+
+            showSlide(
+              currentIndex - 1
+            );
+
+          }
+        );
+
+
+
+        nextButton.addEventListener(
+          "click",
+          function () {
+
+            showSlide(
+              currentIndex + 1
+            );
+
+          }
+        );
+
+
+
+        dots.forEach(
+          function (dot, index) {
+
+            dot.addEventListener(
+              "click",
+              function () {
+
+                showSlide(index);
+
+              }
+            );
+
+          }
+        );
+
+
+
+        showSlide(0);
+
+      }
+    );
+
+  }
+);
+
+</script>
+
+
+</body>
+
+</html>

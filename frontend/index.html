@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Sign in to Dreampath Discover">
+  <title>Sign in | Dreampath Discover</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body.auth-page{min-height:100vh;background:linear-gradient(120deg,rgba(20,31,24,.72),rgba(20,31,24,.22)),url('images/kodaikanal/WhatsApp Image 2026-08-08 at 11.00.03 PM.jpeg') center/cover fixed;display:grid;place-items:center;padding:24px;font-family:'DM Sans',sans-serif}
+    .auth-card{width:min(100%,460px);background:#fffdf8;border-radius:18px;padding:clamp(28px,6vw,48px);box-shadow:0 24px 80px #0004}
+    .auth-brand{font:700 13px 'DM Sans',sans-serif;letter-spacing:.18em;color:#667552}.auth-card h1{font:700 clamp(32px,7vw,44px) 'Playfair Display',serif;margin:12px 0}.auth-card p{color:#62665c;line-height:1.6}
+    .auth-tabs{display:flex;gap:8px;margin:24px 0}.auth-tabs button{flex:1;border:1px solid #d8d9ce;border-radius:999px;padding:11px;background:transparent;color:#293127;font-weight:700;cursor:pointer}.auth-tabs button.active{background:#354632;color:#fff;border-color:#354632}
+    .auth-field{display:grid;gap:8px;margin:16px 0;color:#343a32;font-size:14px;font-weight:600}.auth-field input{box-sizing:border-box;width:100%;padding:14px;border:1px solid #d5d8cf;border-radius:8px;font:inherit;background:white}
+    .auth-submit{width:100%;border:0;border-radius:999px;padding:14px;background:#354632;color:white;font:700 15px 'DM Sans',sans-serif;cursor:pointer;margin-top:8px}.auth-submit:disabled{opacity:.6;cursor:wait}.auth-status{min-height:24px;font-size:14px;margin-top:12px!important}.auth-foot{font-size:12px!important;margin:20px 0 0}
+  </style>
+</head>
+<body class="auth-page">
+  <main class="auth-card">
+    <span class="auth-brand">DREAMPATH DISCOVER</span>
+    <h1 id="auth-title">Welcome back</h1>
+    <p id="auth-description">Sign in to explore thoughtful journeys through South India.</p>
+    <div class="auth-tabs" role="tablist" aria-label="Choose sign-in type">
+      <button type="button" class="active" data-mode="user">Traveller</button>
+      <button type="button" data-mode="admin">Admin</button>
+    </div>
+    <form id="user-form">
+      <label class="auth-field">Email address
+        <input id="contact" type="email" autocomplete="email" placeholder="you@example.com" required>
+      </label>
+      <div id="otp-step" hidden>
+        <label class="auth-field">6-digit verification code
+          <input id="otp-code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="Enter your code">
+        </label>
+      </div>
+      <button class="auth-submit" id="user-submit" type="submit">Send sign-in code</button>
+    </form>
+    <form id="admin-form" hidden>
+      <label class="auth-field">Admin email<input id="admin-email" type="email" autocomplete="username" required></label>
+      <label class="auth-field">Password<input id="admin-password" type="password" autocomplete="current-password" required></label>
+      <button class="auth-submit" type="submit">Sign in as admin</button>
+    </form>
+    <p class="auth-status" id="auth-status" role="status" aria-live="polite"></p>
+    <p class="auth-foot">We’ll email you a one-time sign-in code.</p>
+  </main>
+  <script src="js/login.js"></script>
+</body>
+</html>

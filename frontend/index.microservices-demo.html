@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dreampath Discover - Microservices Demo</title><style>
+body{font-family:Arial,sans-serif;max-width:1100px;margin:auto;padding:24px;background:#f6f3ee;color:#222}
+h1{font-size:40px} .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:white;padding:20px;border-radius:14px;box-shadow:0 4px 18px #0001}.price{font-weight:bold}
+button{padding:10px 14px;border:0;border-radius:8px;cursor:pointer}
+</style></head><body>
+<h1>Dreampath Discover</h1><p>Java Spring Boot Microservices Demo</p>
+<div id="status">Loading tours...</div><div class="grid" id="tours"></div>
+<script>
+const API='/api';
+async function load(){
+ try{
+  const r=await fetch(API+'/tours'); const tours=await r.json();
+  document.getElementById('status').textContent=tours.length+' tour packages';
+  document.getElementById('tours').innerHTML=tours.map(t=>`<div class="card">
+   <h2>${t.title}</h2><p>${t.destination}</p><p>${t.description||''}</p>
+   <p class="price">₹${t.price} · ${t.durationDays} days</p>
+   <button onclick="book(${t.id})">Book</button></div>`).join('');
+ }catch(e){document.getElementById('status').textContent='Gateway/services are not running yet.'}
+}
+async function book(tourId){
+ const b={userId:1,tourId,guests:2,travelDate:new Date().toISOString().slice(0,10)};
+ const r=await fetch(API+'/bookings',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)});
+ alert(r.ok?'Booking created':'Booking failed');
+}
+load();
+</script></body></html>

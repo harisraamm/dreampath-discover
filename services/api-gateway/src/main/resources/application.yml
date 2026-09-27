@@ -1,0 +1,60 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+  main:
+    web-application-type: reactive
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+
+            - id: auth
+              uri: lb://USER-SERVICE
+              predicates:
+                - Path=/api/auth/**
+
+            - id: users
+              uri: lb://USER-SERVICE
+              predicates:
+                - Path=/api/users/**
+
+            - id: tours
+              # Docker Compose DNS keeps this route available while Eureka refreshes its registry.
+              uri: http://tour-service:8082
+              predicates:
+                - Path=/api/tours/**
+
+            - id: bookings
+              uri: lb://BOOKING-SERVICE
+              predicates:
+                - Path=/api/bookings/**
+
+            - id: payments
+              uri: lb://PAYMENT-SERVICE
+              predicates:
+                - Path=/api/payments/**
+
+            - id: notifications
+              uri: lb://NOTIFICATION-SERVICE
+              predicates:
+                - Path=/api/notifications/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+
+    register-with-eureka: true
+    fetch-registry: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway

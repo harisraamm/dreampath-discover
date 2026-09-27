@@ -1,0 +1,8 @@
+(() => {
+ const sections=[...document.querySelectorAll('main .package')]; if(!sections.length)return;
+ const main=sections[0].parentElement, grid=document.createElement('div');grid.className='live-package-list';grid.id='live-tour-packages';sections[0].before(grid);
+ fetch('/api/tours').then(r=>{if(!r.ok)throw new Error();return r.json();}).then(tours=>{
+  sections.forEach(section=>section.remove());grid.replaceChildren();if(!tours.length){grid.textContent='No journeys are currently available.';return;}
+  tours.forEach(t=>{const card=document.createElement('article');card.className='package';const img=document.createElement('img');DreampathTourImages.bind(img,DreampathTourImages.sources(t));img.alt=t.title;const info=document.createElement('div');info.className='package-info';const eyebrow=document.createElement('p');eyebrow.className='eyebrow';eyebrow.textContent=t.destination||'SOUTH INDIA';const h=document.createElement('h2');h.textContent=t.title;const desc=document.createElement('p');desc.className='lead';desc.textContent=t.description||'';const details=document.createElement('div');details.className='details';for(const text of [`FROM ₹${Number(t.price).toLocaleString('en-IN')} / PERSON`,`${t.durationDays} DAYS`]){const span=document.createElement('span');span.textContent=text;details.append(span);}const link=document.createElement('a');link.className='btn btn-primary';link.href=`tour-detail.html?id=${encodeURIComponent(t.id)}`;link.textContent='Explore this journey →';info.append(eyebrow,h,desc,details,link);card.append(img,info);grid.append(card);});
+ }).catch(()=>{grid.textContent='Journey listings are temporarily unavailable. Please refresh in a moment.';});
+})();

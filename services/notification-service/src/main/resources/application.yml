@@ -1,0 +1,12 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: notification-service
+app:
+  security:
+    jwt-secret: ${JWT_SECRET:}
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka

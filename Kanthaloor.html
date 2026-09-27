@@ -1,0 +1,990 @@
+```html
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    Kanthaloor Stay | Dreampath Discover
+  </title>
+  
+  <link
+    rel="icon"
+    type="image/png"
+    href="images/kodaikanal complete/WhatsApp Image 2026-08-08 at 1.10.08 PM.jpeg"
+  >
+
+  <meta
+    name="description"
+    content="Explore two unique Kanthaloor stays with Dreampath Discover."
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+
+  <style>
+
+    /* ==========================================
+       KANTHALOOR PAGE
+       ========================================== */
+
+    .kanthaloor-page {
+      padding-bottom: 90px;
+    }
+
+
+    .kanthaloor-hero {
+      max-width: 850px;
+      margin-bottom: 55px;
+    }
+
+
+    .kanthaloor-hero h1 {
+      margin-bottom: 20px;
+    }
+
+
+    .kanthaloor-hero .lead {
+      max-width: 720px;
+    }
+
+
+    /* ==========================================
+       STAY GRID
+       ========================================== */
+
+    .kanthaloor-stays {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+
+    /* ==========================================
+       STAY CARD
+       ========================================== */
+
+    .kanthaloor-stay {
+      background: #f3efe6;
+      overflow: hidden;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    /* ==========================================
+       IMAGE SLIDER
+       ========================================== */
+
+    .kanthaloor-gallery {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      overflow: hidden;
+      background: #ddd;
+    }
+
+
+    .kanthaloor-gallery-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+    }
+
+
+    .kanthaloor-gallery-track::-webkit-scrollbar {
+      display: none;
+    }
+
+
+    .kanthaloor-gallery-track img {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      scroll-snap-align: start;
+      display: block;
+    }
+
+
+    .gallery-label {
+      position: absolute;
+      left: 15px;
+      bottom: 15px;
+      background: rgba(0, 0, 0, .55);
+      color: #fff;
+      padding: 7px 12px;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      border-radius: 2px;
+    }
+
+
+    .gallery-hint {
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+      background: rgba(255, 255, 255, .88);
+      color: #222;
+      padding: 7px 10px;
+      font-size: 11px;
+      border-radius: 2px;
+    }
+
+
+    /* ==========================================
+       STAY CONTENT
+       ========================================== */
+
+    .kanthaloor-stay-content {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+
+    .kanthaloor-stay-content h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      line-height: 1.15;
+      margin: 8px 0 14px;
+    }
+
+
+    .kanthaloor-price {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+
+    .kanthaloor-description {
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+
+    /* ==========================================
+       HIGHLIGHTS
+       ========================================== */
+
+    .stay-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 24px;
+    }
+
+
+    .stay-highlights span {
+      border: 1px solid rgba(0, 0, 0, .15);
+      padding: 7px 10px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+
+    /* ==========================================
+       DAY DETAILS
+       ========================================== */
+
+    .stay-day {
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+
+    .stay-day strong {
+      font-weight: 700;
+    }
+
+
+    .stay-extra {
+      margin-top: auto;
+      padding-top: 12px;
+    }
+
+
+    .stay-button {
+      margin-top: 20px;
+    }
+
+
+    /* ==========================================
+       FACILITIES
+       ========================================== */
+
+    .facilities-box {
+      margin-top: 28px;
+      padding: 24px;
+      background: #e8e1d1;
+      line-height: 1.8;
+    }
+
+
+    .facilities-box h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+
+    .facilities-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px 25px;
+    }
+
+
+    .facilities-list p {
+      margin: 0;
+    }
+
+
+    /* ==========================================
+       COMMON INFORMATION
+       ========================================== */
+
+    .kanthaloor-note {
+      margin-top: 35px;
+      padding: 25px;
+      background: #e8e1d1;
+      line-height: 1.8;
+    }
+
+
+    /* ==========================================
+       MOBILE
+       ========================================== */
+
+    @media (max-width: 850px) {
+
+      .kanthaloor-stays {
+        grid-template-columns: 1fr;
+      }
+
+      .kanthaloor-gallery {
+        height: 260px;
+      }
+
+      .kanthaloor-gallery-track img {
+        height: 260px;
+      }
+
+      .facilities-list {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 500px) {
+
+      .kanthaloor-stay-content {
+        padding: 22px;
+      }
+
+      .kanthaloor-stay-content h2 {
+        font-size: 26px;
+      }
+
+      .kanthaloor-gallery {
+        height: 230px;
+      }
+
+      .kanthaloor-gallery-track img {
+        height: 230px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body data-page="packages">
+
+
+<div id="site-header"></div>
+
+
+<main>
+
+
+  <!-- ========================================= -->
+  <!-- PAGE TITLE -->
+  <!-- ========================================= -->
+
+  <section class="page-title container kanthaloor-page">
+
+    <div class="kanthaloor-hero">
+
+      <p class="eyebrow">
+        KERALA · KANTHALOOR
+      </p>
+
+      <h1>
+        Find your<br>
+        <em>perfect stay.</em>
+      </h1>
+
+      <p class="lead">
+        Discover two unique stays in the
+        beautiful hills of Kanthaloor.
+        Experience peaceful mountain views,
+        scenic trekking, farm visits,
+        waterfalls and memorable nights
+        surrounded by nature.
+      </p>
+
+    </div>
+
+
+    <!-- ======================================= -->
+    <!-- TWO STAYS -->
+    <!-- ======================================= -->
+
+    <div class="kanthaloor-stays">
+
+
+      <!-- ===================================== -->
+      <!-- TENT STAY -->
+      <!-- ===================================== -->
+
+      <article class="kanthaloor-stay">
+
+
+        <!-- IMAGE SLIDER -->
+
+        <div class="kanthaloor-gallery">
+
+          <div class="kanthaloor-gallery-track">
+
+            <img
+              src="images/kanthaloor/tent-stay/IMG-20260808-WA0000.jpg"
+              alt="Kanthaloor Tent Stay"
+              loading="lazy"
+            >
+
+            <img
+              src="images/kanthaloor/tent-stay/IMG-20260808-WA0001.jpg"
+              alt="Kanthaloor Tent Stay view"
+              loading="lazy"
+            >
+
+            <img
+              src="images/kanthaloor/tent-stay/IMG-20260808-WA0002.jpg"
+              alt="Kanthaloor Tent campsite"
+              loading="lazy"
+            >
+
+          </div>
+
+          <span class="gallery-label">
+            Kanthaloor Tent Stay
+          </span>
+
+          <span class="gallery-hint">
+            ← Swipe →
+          </span>
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div class="kanthaloor-stay-content">
+
+          <p class="eyebrow">
+            KANTHALOOR
+          </p>
+
+          <h2>
+            ⛺ Kanthaloor – Tent Stay
+          </h2>
+
+
+          <div class="kanthaloor-price">
+            ₹1,599 / PERSON
+          </div>
+
+
+          <p class="kanthaloor-description">
+            A peaceful nature escape in the
+            beautiful hills of Kanthaloor.
+            Stay in a cozy tent, explore scenic
+            viewpoints, visit farms and enjoy
+            an exciting waterfall trek.
+          </p>
+
+
+          <!-- HIGHLIGHTS -->
+
+          <div class="stay-highlights">
+
+            <span>Tent Stay</span>
+            <span>Bramaram Point</span>
+            <span>Lemon Grass Valley</span>
+            <span>Tree House</span>
+            <span>Campfire</span>
+            <span>Waterfall Trek</span>
+            <span>Meals</span>
+
+          </div>
+
+
+          <!-- DAY 1 -->
+
+          <p class="stay-day">
+
+            <strong>
+              DAY 1 – Arrival & Adventure Begins
+            </strong>
+
+            <br><br>
+
+            🕝 <strong>2:30 PM – Check-in</strong>
+            <br>
+
+            Settle into your comfortable tent
+            and enjoy the fresh mountain air.
+
+            <br><br>
+
+            🥾 <strong>3:30 PM – Bramaram Point</strong>
+            <br>
+
+            Enjoy a mild trek and panoramic
+            views of the surrounding hills.
+
+            <br><br>
+
+            🌿 <strong>Lemon Grass Valley Visit</strong>
+            <br>
+
+            Explore the lush greenery and
+            beautiful valley landscapes.
+
+            <br><br>
+
+            🧴 <strong>Lemon Grass Oil Extraction Unit</strong>
+            <br>
+
+            Learn about lemon grass oil
+            extraction and its benefits.
+
+            <br><br>
+
+            🌳 <strong>Tree House Climbing</strong>
+            <br>
+
+            Climb the tree house and enjoy
+            a unique view of the surroundings.
+
+            <br><br>
+
+            🏡 <strong>6:30 PM – Back at Property</strong>
+            <br>
+
+            Relax at the campsite.
+
+            <br><br>
+
+            🔥 <strong>7:30 PM – Campfire & Music</strong>
+            <br>
+
+            Enjoy music, sharing sessions and
+            a relaxing campfire evening.
+
+            <br><br>
+
+            🍽️ <strong>8:30 PM – Dinner</strong>
+            <br>
+
+            Chapathi, Chicken Curry, Rice
+            and Dal Curry.
+
+            <br><br>
+
+            🌙 <strong>11:00 PM – Good Night</strong>
+
+          </p>
+
+
+          <!-- DAY 2 -->
+
+          <p class="stay-day">
+
+            <strong>
+              DAY 2 – Nature & Farewell
+            </strong>
+
+            <br><br>
+
+            🌞 <strong>6:30 AM – Good Morning</strong>
+            <br>
+
+            Wake up to the fresh mountain air
+            and beautiful sunrise.
+
+            <br><br>
+
+            🍊 <strong>7:30 AM – Fruit Farm Visit</strong>
+            <br>
+
+            Explore an organic fruit farm
+            and locally grown produce.
+
+            <br><br>
+
+            ☕ <strong>8:30 AM – Breakfast</strong>
+            <br>
+
+            Idly/Dosa, Chutney and Sambar.
+
+            <br><br>
+
+            🥾💧 <strong>9:30 AM – Kanthalloor Waterfall Trek</strong>
+            <br>
+
+            Trek to the beautiful Kanthalloor
+            Waterfalls.
+
+            <br><br>
+
+            👋 <strong>12:00 PM – Check-out</strong>
+
+          </p>
+
+
+          <div class="stay-extra">
+
+
+            <p>
+              <strong>
+                Perfect for:
+              </strong>
+
+              Couples · Friends Groups ·
+              Solo Travellers ·
+              Weekend Getaways
+            </p>
+
+
+            <div class="facilities-box">
+
+              <h3>
+                Facilities Available
+              </h3>
+
+              <div class="facilities-list">
+
+                <p>🏕️ Tent Stay</p>
+
+                <p>🅿️ Parking</p>
+
+                <p>🔋 Charging Points</p>
+
+                <p>🧑‍🔧 On-Site Support</p>
+
+                <p>🍫 Snack & Essentials Shop</p>
+
+                <p>🚻 Clean Restrooms</p>
+
+              </div>
+
+            </div>
+
+
+            <button
+              class="btn btn-primary js-book stay-button"
+              data-trip="Kanthaloor – Tent Stay"
+              type="button"
+            >
+
+              Book this stay
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ===================================== -->
+      <!-- A FRAME STAY -->
+      <!-- ===================================== -->
+
+      <article class="kanthaloor-stay">
+
+
+        <!-- IMAGE SLIDER -->
+
+        <div class="kanthaloor-gallery">
+
+          <div class="kanthaloor-gallery-track">
+
+            <img
+              src="images/kanthaloor/frame-stay/IMG-20260808-WA0000.jpg"
+              alt="Kanthaloor A Frame Stay"
+              loading="lazy"
+            >
+
+            <img
+              src="images/kanthaloor/frame-stay/IMG-20260808-WA0001.jpg"
+              alt="Kanthaloor A Frame Stay view"
+              loading="lazy"
+            >
+
+            <img
+              src="images/kanthaloor/frame-stay/IMG-20260808-WA0002.jpg"
+              alt="Kanthaloor A Frame campsite"
+              loading="lazy"
+            >
+
+          </div>
+
+          <span class="gallery-label">
+            Kanthaloor A Frame
+          </span>
+
+          <span class="gallery-hint">
+            ← Swipe →
+          </span>
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div class="kanthaloor-stay-content">
+
+          <p class="eyebrow">
+            KANTHALOOR
+          </p>
+
+          <h2>
+            ✨ Kanthaloor – A Frame Stay
+          </h2>
+
+
+          <div class="kanthaloor-price">
+            ₹2,299 / PERSON
+          </div>
+
+
+          <p class="kanthaloor-description">
+            Unwind in nature's beauty with
+            a comfortable A-Frame stay.
+            Explore scenic trekking routes,
+            beautiful valleys, farms and
+            waterfalls while enjoying
+            peaceful mountain evenings.
+          </p>
+
+
+          <!-- HIGHLIGHTS -->
+
+          <div class="stay-highlights">
+
+            <span>A Frame Stay</span>
+            <span>Bramaram Point</span>
+            <span>Lemon Grass Valley</span>
+            <span>Tree House</span>
+            <span>Campfire</span>
+            <span>Waterfall Trek</span>
+            <span>Meals</span>
+
+          </div>
+
+
+          <!-- DAY 1 -->
+
+          <p class="stay-day">
+
+            <strong>
+              DAY 1 – Arrival & Adventure Begins
+            </strong>
+
+            <br><br>
+
+            🕝 <strong>2:30 PM – Check-in</strong>
+            <br>
+
+            Settle into your comfortable
+            A-Frame stay and enjoy the
+            fresh mountain air.
+
+            <br><br>
+
+            🥾 <strong>3:30 PM – Bramaram Point</strong>
+            <br>
+
+            Take a mild trek and enjoy
+            panoramic hill views.
+
+            <br><br>
+
+            🌿 <strong>Lemon Grass Valley Visit</strong>
+            <br>
+
+            Walk through the lush fields
+            and explore the beautiful valley.
+
+            <br><br>
+
+            🧴 <strong>Lemon Grass Oil Extraction Unit</strong>
+            <br>
+
+            Learn about the traditional
+            lemon grass oil extraction process.
+
+            <br><br>
+
+            🌳 <strong>Tree House Climbing</strong>
+            <br>
+
+            Climb the tree house and
+            enjoy a memorable view.
+
+            <br><br>
+
+            🏡 <strong>6:30 PM – Back at Property</strong>
+            <br>
+
+            Relax and unwind at your
+            campsite.
+
+            <br><br>
+
+            🔥🎶 <strong>
+              7:30 PM – Campfire, Music
+              & Sharing Sessions
+            </strong>
+            <br>
+
+            Enjoy music, conversations
+            and a peaceful campfire.
+
+            <br><br>
+
+            🍽️ <strong>8:30 PM – Dinner</strong>
+            <br>
+
+            Chapathi, Chicken Curry,
+            Rice and Dal Curry.
+
+            <br><br>
+
+            🌙 <strong>11:00 PM – Good Night</strong>
+
+          </p>
+
+
+          <!-- DAY 2 -->
+
+          <p class="stay-day">
+
+            <strong>
+              DAY 2 – Nature & Farewell
+            </strong>
+
+            <br><br>
+
+            🌞 <strong>6:30 AM – Good Morning</strong>
+            <br>
+
+            Wake up to the beautiful
+            mountain sunrise.
+
+            <br><br>
+
+            🍊 <strong>7:30 AM – Fruit Farm Visit</strong>
+            <br>
+
+            Explore an organic fruit farm
+            and enjoy fresh local produce.
+
+            <br><br>
+
+            ☕ <strong>8:30 AM – Breakfast</strong>
+            <br>
+
+            Idly/Dosa, Chutney and Sambar.
+
+            <br><br>
+
+            🥾💧 <strong>
+              9:30 AM – Kanthalloor
+              Waterfall Trek
+            </strong>
+            <br>
+
+            Experience the beautiful
+            Kanthalloor Waterfalls.
+
+            <br><br>
+
+            👋 <strong>
+              12:00 PM – Check-out
+            </strong>
+
+          </p>
+
+
+          <div class="stay-extra">
+
+
+            <p>
+              <strong>
+                Perfect for:
+              </strong>
+
+              Couples · Friends Groups ·
+              Solo Travellers ·
+              Weekend Getaways
+            </p>
+
+
+            <div class="facilities-box">
+
+              <h3>
+                Facilities Available
+              </h3>
+
+              <div class="facilities-list">
+
+                <p>🏕️ A-Frame Stay</p>
+
+                <p>🅿️ Parking</p>
+
+                <p>🔋 Charging Points</p>
+
+                <p>🧑‍🔧 On-Site Support</p>
+
+                <p>🍫 Snack & Essentials Shop</p>
+
+                <p>🚻 Clean Restrooms</p>
+
+              </div>
+
+            </div>
+
+
+            <button
+              class="btn btn-primary js-book stay-button"
+              data-trip="Kanthaloor – A Frame Stay"
+              type="button"
+            >
+
+              Book this stay
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- ======================================= -->
+    <!-- COMMON INFORMATION -->
+    <!-- ======================================= -->
+
+    <div class="kanthaloor-note">
+
+      <strong>
+        Kanthaloor Package Highlights:
+      </strong>
+
+      <br>
+
+      Scenic mountain views · Bramaram Point ·
+      Lemon Grass Valley · Lemon Grass Oil Unit ·
+      Tree House Climbing · Fruit Farm ·
+      Campfire & Music · Meals ·
+      Kanthalloor Waterfall Trek
+
+      <br><br>
+
+      <strong>
+        Perfect for:
+      </strong>
+
+      Couples 💑 · Friends Groups 👬👭 ·
+      Solo Travellers 🧍 ·
+      Weekend Getaways ⛺
+
+    </div>
+
+
+  </section>
+
+
+</main>
+
+
+<div id="site-footer"></div>
+
+<div id="booking-modal"></div>
+
+
+<script src="js/script.js"></script>
+
+
+</body>
+
+</html>
+```

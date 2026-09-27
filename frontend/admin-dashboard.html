@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin dashboard | Dreampath Discover</title><link rel="stylesheet" href="css/style.css">
+<style>
+.admin-wrap select{padding:11px;border:1px solid #ccd0c5;border-radius:6px;font:inherit}
+.admin-wrap{max-width:1120px;margin:50px auto;padding:24px}.admin-wrap form{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;background:#f8f6f0;padding:22px;border-radius:12px}.admin-wrap label{display:grid;gap:6px;font-weight:600}.admin-wrap input,.admin-wrap textarea{padding:11px;border:1px solid #ccd0c5;border-radius:6px;font:inherit}.admin-wrap textarea{min-height:76px}.admin-wrap .wide{grid-column:1/-1}.admin-wrap table{width:100%;border-collapse:collapse;margin-top:28px}.admin-wrap th,.admin-wrap td{text-align:left;padding:12px;border-bottom:1px solid #ddd}.admin-wrap button{cursor:pointer}.admin-actions{display:flex;gap:8px;flex-wrap:wrap}.admin-message{min-height:24px}.image-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin:18px 0}.image-card{border:1px solid #ddd;border-radius:10px;padding:10px;background:#fff}.image-card img{width:100%;height:135px;object-fit:cover;border-radius:6px}.image-card p{font-size:12px;overflow-wrap:anywhere}.image-card button{margin:3px}.image-card .image-controls{display:flex;flex-wrap:wrap;gap:4px}.cover-preview{max-width:360px;margin:16px 0;padding:10px;border:1px solid #ddd;border-radius:10px;background:#fff}.cover-preview img{display:block;width:100%;height:200px;object-fit:cover;border-radius:6px}.cover-preview figcaption{margin-top:8px;font-size:13px}
+</style>
+</head>
+<body><div id="site-header"></div><main class="admin-wrap">
+<p class="eyebrow">DREAMPATH DISCOVER</p><h1>Journey management</h1><p>Add and update tour packages. Public package pages keep their existing content and design.</p>
+<h2 id="form-heading">Add a journey</h2>
+<form id="tour-form"><input type="hidden" id="tour-id">
+<label>Destination<input id="destination" required></label><label>State for Trips filter<select id="state" required><option value="">Choose a state</option><option value="tamilnadu">Tamil Nadu</option><option value="kerala">Kerala</option></select></label><label>Package title<input id="title" required></label>
+<label>Price per person (₹)<input id="price" type="number" min="0" step="1" required></label><label>Duration (days)<input id="duration" type="number" min="1" required></label>
+<label class="wide">Cover image URL (optional)<input id="imagePath" placeholder="Use a web image URL, or upload photos below"></label>
+<label class="wide">Description<textarea id="description"></textarea></label><label>Accommodation<textarea id="accommodationDetails"></textarea></label><label>Food details<textarea id="foodDetails"></textarea></label><label class="wide">Facilities<textarea id="facilities"></textarea></label>
+<div class="wide"><button class="btn btn-primary" type="submit">Save journey</button> <button type="button" id="cancel-edit">Clear form</button></div></form>
+<p class="admin-message" id="message" role="status"></p>
+<section id="image-manager" hidden><h2>Package photos</h2><p>Upload multiple images, remove unwanted photos, and adjust their order. The first uploaded photo is used as the public cover.</p><figure id="cover-preview" class="cover-preview" hidden><img id="cover-image" alt="Current package cover"><figcaption id="cover-caption"></figcaption></figure><label>Upload photos<input id="image-upload" type="file" accept="image/*" multiple></label><div id="image-list" class="image-list"></div></section>
+<h2>All journeys</h2><div id="tour-table">Loading…</div></main><div id="site-footer"></div>
+<script src="js/script.js"></script><script src="js/auth-guard.js"></script><script src="js/tour-images.js"></script><script src="js/admin.js"></script></body></html>
